@@ -5,28 +5,28 @@ CURRENTDIR=`pwd`
 # Syntax: sourcefileupdate <gitrepo> <name> [fileA, fileB, ...]
 function sourcefileupdate
 {
-	if [ ! -d "$HOME/.source/$2" ]; then
-		mkdir $HOME/.source/$2 -p
-		cd $HOME/.source/$2
-		git clone $1 .
-		make
-		for FILE in "${@:3}"; do
-			if [ -f $HOME/.source/$2/$FILE ]; then
-				cp -u $HOME/.source/$2/$FILE $HOME/.bin
-			fi
-		done
-	else
-		cd $HOME/.source/$2
-		git pull | tee /tmp/sourcefileupdate-log
-		if ! grep -Fxq "Already up-to-date." "/tmp/sourcefileupdate-log"; then
-			make
-			for FILE in "${@:3}"; do
-				if [ -f $HOME/.source/$2/$FILE ]; then
-					cp -u $HOME/.source/$2/$FILE $HOME/.bin
-				fi
-			done
-		fi
-	fi
+    if [ ! -d "$HOME/.source/$2" ]; then
+        mkdir $HOME/.source/$2 -p
+        cd $HOME/.source/$2
+        git clone $1 .
+        make
+        for FILE in "${@:3}"; do
+            if [ -f $HOME/.source/$2/$FILE ]; then
+                cp -u $HOME/.source/$2/$FILE $HOME/.bin
+            fi
+        done
+    else
+        cd $HOME/.source/$2
+        git pull | tee /tmp/sourcefileupdate-log
+        if ! grep -Fxq "Already up-to-date." "/tmp/sourcefileupdate-log"; then
+            make
+            for FILE in "${@:3}"; do
+                if [ -f $HOME/.source/$2/$FILE ]; then
+                    cp -u $HOME/.source/$2/$FILE $HOME/.bin
+                fi
+            done
+        fi
+    fi
 }
 
 # Update dotfiles
@@ -34,13 +34,13 @@ echo '┌───────────────────────�
 echo '│ UPDATING DOTFILES            │'
 echo '└──────────────────────────────┘'
 if [ -d "$HOME/.dotfiles" ]; then
-	cd $HOME/.dotfiles
-	git pull
-	ls
-	exit
+    cd $HOME/.dotfiles
+    git pull
+    ls
+    exit
 else
-	mkdir $HOME/.dotfiles -p
-	git clone https://github.com/kevinvdburgt/dotfiles.git $HOME/.dotfiles
+    mkdir $HOME/.dotfiles -p
+    git clone https://github.com/kevinvdburgt/dotfiles.git $HOME/.dotfiles
 fi
 
 # System update
@@ -64,46 +64,3 @@ echo '└───────────────────────�
 sourcefileupdate https://github.com/baskerville/bspwm.git bspwm bspwm bspc
 sourcefileupdate https://github.com/baskerville/sxhkd.git sxhkd sxhkd
 sourcefileupdate https://github.com/LemonBoy/bar.git bar bar
-
-
-
-#function s2b
-#{
-#	cd /tmp/source2binary
-#	git clone $1 $2
-#	cd $2
-#	make
-#}
-#
-## System update
-#echo '───PACMAN───'
-#sudo pacman -Syu
-#
-#echo '───YAOURT───'
-#yaourt -Syua
-#
-#echo '───DOTFILES───'
-#if [ ! -d "$HOME/.dotfiles" ]; then
-#	mkdir $HOME/.dotfiles && cd $HOME/.dotfiles
-#	git clone https://github.com/kevinvdburgt/dotfiles.git .
-#fi
-#
-## TODO: Check and create symlinks..
-#
-#echo '───WALLPAPER───'
-#curl http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-12680.jpg -o $HOME/.config/wallpaper.jpg
-#
-#echo '───SOURCE2BINARY───'
-#[ -d "/tmp/source2binary/" ] && rm -rf /tmp/source2binary
-#mkdir /tmp/source2binary
-#
-#s2b https://github.com/baskerville/bspwm.git bspwm
-#mv -f bspwm $HOME/.bin
-#mv -f bspc $HOME/.bin
-#
-#s2b https://github.com/baskerville/sxhkd.git sxhkd
-#mv -f sxhkd $HOME/.bin
-#
-#s2b https://github.com/LemonBoy/bar bar
-#mv -f bar $HOME/.bin
-#
