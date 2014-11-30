@@ -36,8 +36,6 @@ echo '└───────────────────────�
 if [ -d "$HOME/.dotfiles" ]; then
     cd $HOME/.dotfiles
     git pull
-    ls
-    exit
 else
     mkdir $HOME/.dotfiles -p
     git clone https://github.com/kevinvdburgt/dotfiles.git $HOME/.dotfiles
