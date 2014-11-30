@@ -1,0 +1,27 @@
+#!/bin/bash
+
+## Load all fonts
+xset +fp /usr/share/fonts/local
+xset +fp /usr/share/fonts/misc
+xset +fp $HOME/.fonts
+xset fp rehash
+
+## X.org settings
+xrdb -merge $HOME/.Xresources &
+xsetroot -cursor_name left_ptr &
+wmname LG3D &
+#unclutter -idle 5 -visible &
+numlockonx on &
+
+## Startingup some usefull daemons
+udiskie &
+pulseaudio --start &
+
+## Eyecandy, not realy essential..
+feh --bg-scale $HOME/.config/wallpaper.png &
+compton --config $HOME/.config/compton.conf &
+
+## Launch the windowmanager and keyboard deamon
+sxhkd -f 100 &
+bspwm
+

@@ -1,0 +1,7 @@
+#!/bin/bash
+# Required: jq, curl
+
+scrot -s /tmp/scrot.png
+
+dest=$(curl -Ss --progress-bar -F files=@/tmp/scrot.png http://pomf.se/upload.php | jq -c -r '.files[0].url')
+echo "http://i.pomf.se/$dest"

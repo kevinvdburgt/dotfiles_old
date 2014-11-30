@@ -1,0 +1,34 @@
+#!/bin/bash
+
+CARD="G930"
+
+case $1 in
+    "volume-up")
+        if ponymix list-cards | grep $CARD; then
+            ponymix -d $CARD increase 2
+        else
+            ponymix increase 2
+        fi
+        ;;
+    "volume-down")
+        if ponymix list-cards | grep $CARD; then
+            ponymix -d $CARD decrease 2
+        else
+            ponymix decrease 2
+        fi
+        ;;
+    "volume-toggle")
+        if ponymix list-cards | grep $CARD; then
+            ponymix -d $CARD toggle
+        else
+            ponymix toggle
+        fi
+        ;;
+    "volume-get")
+        if ponymix list-cards | grep $CARD; then
+            ponymix -d $CARD get-volume
+        else
+            ponymix get-volume
+        fi
+        ;;
+esac
