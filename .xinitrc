@@ -16,6 +16,7 @@ numlockonx on &
 ## Startingup some usefull daemons
 udiskie &
 pulseaudio --start &
+mpd ~/.config/mpd/mpd.conf &
 
 ## Eyecandy, not realy essential..
 feh --bg-scale $HOME/.config/wallpaper.png &

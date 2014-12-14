@@ -9,6 +9,10 @@ while read -r line; do
             var_dat="${line#???}"
             ;;
 
+        TIT*) ## Current focussed window title
+            var_title="${line#???}"
+            ;;
+
         W*) ## BSPWM Internal State
             wminfo=("" "" "")
             currentMonitor=0
@@ -82,7 +86,7 @@ while read -r line; do
 
         ## Screen 2 (left)
         printf "%s" "${OFFSET}%{S1}%{l}${OFFSET}"
-        printf "%s" "${wminfo[2]}"
+        printf "%s" "${wminfo[2]}   ${var_title}"
 
         ## Screem 2 (right)
         printf "%s" "%{S1}%{r}"

@@ -41,6 +41,12 @@ else
     git clone https://github.com/kevinvdburgt/dotfiles.git $HOME/.dotfiles
 fi
 
+# Fixing symlinks
+echo '┌──────────────────────────────┐'
+echo '│ SYMLINKING DOTFILES          │'
+echo '└──────────────────────────────┘'
+
+
 # System update
 echo '┌──────────────────────────────┐'
 echo '│ PACMAN                       │'
@@ -62,3 +68,4 @@ echo '└───────────────────────�
 sourcefileupdate https://github.com/baskerville/bspwm.git bspwm bspwm bspc
 sourcefileupdate https://github.com/baskerville/sxhkd.git sxhkd sxhkd
 sourcefileupdate https://github.com/LemonBoy/bar.git bar bar
+sourcefileupdate https://github.com/baskerville/xtitle.git xtitle xtitle
