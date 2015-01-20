@@ -1,0 +1,4 @@
+#!/bin/bash
+
+CONFIG_SETTINGSFILE=$HOME/dotties.ini
+CONFIG_WALLPAPER=http://fc04.deviantrt.net/fs71/f/2013/074/c/3/___bright_morning____by_pure_poison89-d5y3yq4.jpg
