@@ -17,6 +17,7 @@ numlockonx on &
 udiskie &
 pulseaudio --start &
 mpd ~/.config/mpd/mpd.conf &
+mpdscribble &
 
 ## Eyecandy, not realy essential..
 feh --bg-scale $HOME/.config/wallpaper.png &

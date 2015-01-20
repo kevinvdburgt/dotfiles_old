@@ -69,3 +69,4 @@ sourcefileupdate https://github.com/baskerville/bspwm.git bspwm bspwm bspc
 sourcefileupdate https://github.com/baskerville/sxhkd.git sxhkd sxhkd
 sourcefileupdate https://github.com/LemonBoy/bar.git bar bar
 sourcefileupdate https://github.com/baskerville/xtitle.git xtitle xtitle
+#sourcefileupdate https://github.com/wor/scrobby.git scrobby scrobby
