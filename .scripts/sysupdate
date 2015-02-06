@@ -1,5 +1,46 @@
 #!/bin/bash
 
+# ----------------------------------------
+# Sysupdate - Dotfiles install / updates
+# 
+# This is my dotfiles installation and
+# upgrade script, keep in mind that this
+# script is written for ArchLinux so it
+# wont work on other distro's.
+# ----------------------------------------
+
+## 0. Check if the dotfiles are installed
+if [ ! -d $HOME/.dotfiles/.git ]; then
+	echo "Configuration file is missing."
+	echo "Did you cloned the repository to \"$HOME/.dotfiles\" ?"
+	exit
+fi
+
+## 1. Update the dotfiles from the web
+cd $HOME/.dotfiles
+#git pull
+
+## 2. run the dotfile updater
+$HOME/.dotfiles/dotsync/update
+exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CURRENTDIR=`pwd`
 source $HOME/.dotfiles/config
 
@@ -7,58 +48,58 @@ source $HOME/.dotfiles/config
 # Syntax: sourcefileupdate <gitrepo> <name> [fileA, fileB, ...]
 function sourcefileupdate
 {
-    if [ ! -d "$HOME/.source/$2" ]; then
-        mkdir $HOME/.source/$2 -p
-        cd $HOME/.source/$2
-        git clone $1 .
-        make
-        for FILE in "${@:3}"; do
-            if [ -f $HOME/.source/$2/$FILE ]; then
-                cp -u $HOME/.source/$2/$FILE $HOME/.bin
-            fi
-        done
-    else
-        cd $HOME/.source/$2
-        git pull | tee /tmp/sourcefileupdate-log
-        if ! grep -Fxq "Already up-to-date." "/tmp/sourcefileupdate-log"; then
-            make
-            for FILE in "${@:3}"; do
-                if [ -f $HOME/.source/$2/$FILE ]; then
-                    cp -u $HOME/.source/$2/$FILE $HOME/.bin
-                fi
-            done
-        fi
-    fi
+	if [ ! -d "$HOME/.source/$2" ]; then
+		mkdir $HOME/.source/$2 -p
+		cd $HOME/.source/$2
+		git clone $1 .
+		make
+		for FILE in "${@:3}"; do
+			if [ -f $HOME/.source/$2/$FILE ]; then
+				cp -u $HOME/.source/$2/$FILE $HOME/.bin
+			fi
+		done
+	else
+		cd $HOME/.source/$2
+		git pull | tee /tmp/sourcefileupdate-log
+		if ! grep -Fxq "Already up-to-date." "/tmp/sourcefileupdate-log"; then
+			make
+			for FILE in "${@:3}"; do
+				if [ -f $HOME/.source/$2/$FILE ]; then
+					cp -u $HOME/.source/$2/$FILE $HOME/.bin
+				fi
+			done
+		fi
+	fi
 }
 
 # Symlinking dotfiles
 function symlinkDotfile
 {
-    echo "TODO: Create a symlink"
+	echo "TODO: Create a symlink"
 }
 
 # Config, write setting
 # Syntax: configWrite <file> <key> <value>
 function configWrite
 {
-    # Create a new config file when it does not exists
-    [ ! -f $1 ] && touch $1
+	# Create a new config file when it does not exists
+	[ ! -f $1 ] && touch $1
 
-    # Append or replace ?
-    if grep -q "^$2=" "$1"; then
-        sed "s/^$2=.*/$2=$3/" -i $1
-    else
-        echo "$2=$3" >> $1
-    fi
+	# Append or replace ?
+	if grep -q "^$2=" "$1"; then
+		sed "s/^$2=.*/$2=$3/" -i $1
+	else
+		echo "$2=$3" >> $1
+	fi
 }
 
 # Config, read setting
 # Syntax configRead <file> <key>
 function configRead
 {
-    if [ -f $1 ]; then
-        grep -oP "$2=\K.*" $1
-    fi
+	if [ -f $1 ]; then
+		grep -oP "$2=\K.*" $1
+	fi
 }
 
 # Update wallpaper
@@ -78,11 +119,11 @@ echo '┌───────────────────────�
 echo '│ UPDATING DOTFILES            │'
 echo '└──────────────────────────────┘'
 if [ -d "$HOME/.dotfiles" ]; then
-    cd $HOME/.dotfiles
-    git pull
+	cd $HOME/.dotfiles
+	git pull
 else
-    mkdir $HOME/.dotfiles -p
-    git clone https://github.com/kevinvdburgt/dotfiles.git $HOME/.dotfiles
+	mkdir $HOME/.dotfiles -p
+	git clone https://github.com/kevinvdburgt/dotfiles.git $HOME/.dotfiles
 fi
 
 # Fixing symlinks

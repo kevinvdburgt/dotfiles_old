@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# ----------------------------------------
+# Dotfiles configuration
+# 
+# This file contains the global config
+# like background wallpaper source. I am
+# using a config file like this to keep
+# my dotfiles folder clean as possible.
+# ----------------------------------------
+
+DOTCONFIG_CONFIGFILE=$HOME/.dotfiles.ini
+
+## New wallpaper
+DOTCONFIG_WALLPAPER=http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-88782.jpg
+## Old wallpapers
+#DOTCONFIG_WALLPAPER=http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-144282.jpg
