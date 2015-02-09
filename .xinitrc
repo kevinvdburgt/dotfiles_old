@@ -20,7 +20,7 @@ mpd ~/.config/mpd/mpd.conf &
 mpdscribble &
 
 ## Eyecandy, not realy essential..
-feh --bg-scale $HOME/.config/wallpaper.png &
+feh --bg-scale $HOME/.config/wallpaper.jpg &
 compton --config $HOME/.config/compton.conf &
 
 ## Launch the windowmanager and keyboard deamon

@@ -33,7 +33,7 @@ echo
 [[ $REPLY =~ ^[Yy]$ ]] && yaourt - Syua
 
 ## 4. Update applications directly from Git
-#read -p "Update and compile custom applications (y/N)" -n 1 -r
+read -p "Update and compile custom applications (y/N)" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   dotfile_sourceupdate https://github.com/baskerville/bspwm.git bspwm bspwm bspc
@@ -60,7 +60,7 @@ dotfile_symlink $HOME/.dotfiles/.xinitrc $HOME/.xinitrc
 ## 6. Update the wallpaper
 if [ ! "$(dotfile_get $DOTCONFIG_CONFIGFILE currentWallpaper)" = $DOTCONFIG_WALLPAPER ]; then
   echo "Downloading new wallpaper.."
-  curl $DOTCONFIG_WALLPAPER -o $HOME/wp.jpg
+  curl $DOTCONFIG_WALLPAPER -o $HOME/.config/wallpaper.jpg
   dotfile_set $DOTCONFIG_CONFIGFILE currentWallpaper $DOTCONFIG_WALLPAPER
 fi
 
