@@ -51,6 +51,8 @@ dotfile_symlink $HOME/.dotfiles/.config/compton.conf $HOME/.config/compton.conf
 dotfile_symlink $HOME/.dotfiles/.fonts/ $HOME/.fonts
 dotfile_symlink $HOME/.dotfiles/.scripts/ $HOME/.scripts
 
+dotfile_symlink $HOME/.dotfiles/.weechat/weechat.conf $HOME/.weechat/weechat.conf
+
 dotfile_symlink $HOME/.dotfiles/.Xresources $HOME/.Xresources
 dotfile_symlink $HOME/.dotfiles/.bash_profile $HOME/.bash_profile
 dotfile_symlink $HOME/.dotfiles/.gtkrc-2.0 $HOME/.gtkrc-2.0
