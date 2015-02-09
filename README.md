@@ -32,5 +32,4 @@ Here is a list with stuff i just want on my machines
 
 ## Images
 Current wallpaper
-![current wallpaper](http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-88782.jpg)
-1
+![current wallpaper](http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-38641.png)
