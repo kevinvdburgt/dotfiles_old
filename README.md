@@ -8,6 +8,7 @@ First, keep in mind that those scripts and dotfiles are written for ArchLinux, s
 - [feh](https://wiki.archlinux.org/index.php/feh)
 - [pulseaudio](https://wiki.archlinux.org/index.php/PulseAudio)
 - [udiskie](https://wiki.archlinux.org/index.php/Udisks#Udiskie)
+- [modipy](https://www.mopidy.com/)
 
 
 ## Folder structure
@@ -32,3 +33,4 @@ Here is a list with stuff i just want on my machines
 ## Images
 Current wallpaper
 ![current wallpaper](http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-88782.jpg)
+1

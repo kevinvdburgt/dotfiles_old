@@ -16,11 +16,12 @@ numlockonx on &
 ## Startingup some usefull daemons
 udiskie &
 pulseaudio --start &
-mpd ~/.config/mpd/mpd.conf &
-mpdscribble &
+#mpd ~/.config/mpd/mpd.conf &
+#mpdscribble &
+modipy &
 
 ## Eyecandy, not realy essential..
-feh --bg-scale $HOME/.config/wallpaper.jpg &
+feh --bg-scale $HOME/.config/wallpaper.png &
 compton --config $HOME/.config/compton.conf &
 
 ## Launch the windowmanager and keyboard deamon

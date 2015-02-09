@@ -12,6 +12,7 @@
 DOTCONFIG_CONFIGFILE=$HOME/.dotfiles.ini
 
 ## New wallpaper
-DOTCONFIG_WALLPAPER=http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-88782.jpg
+DOTCONFIG_WALLPAPER=http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-38641.png
 ## Old wallpapers
+#DOTCONFIG_WALLPAPER=http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-88782.jpg
 #DOTCONFIG_WALLPAPER=http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-144282.jpg
