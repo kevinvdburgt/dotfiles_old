@@ -106,9 +106,6 @@ super + @button{1-3}
 # wm independent hotkeys
 #
 
-super + Return
-    urxvt
-
 super + space
     dmenu_run
 

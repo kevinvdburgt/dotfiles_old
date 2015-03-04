@@ -2,8 +2,8 @@
 
 PANEL_FIFO=/tmp/panel-fifo
 PANEL_HEIGHT=16
-PANEL_FOREGROUND='#FFFFFFFF'
-PANEL_BACKGROUND='#22FFFFFF'
+PANEL_FOREGROUND='#DDFFFFFF'
+PANEL_BACKGROUND='#AA000000'
 PANEL_FONT='*-stlarch-medium-r-*-*-10-*-*-*-*-*-*-*,-benis-lemon-abunai-abunai-medium-r-normal--10-110-75-75-m-50-iso10646-1'
 PANEL_MONITORCOUNT=$(bspc query -M | wc -l)
 
@@ -29,7 +29,7 @@ xtitle -sf 'TIT%s' > "$PANEL_FIFO" &
 
 while true; do
     printf "%s%s\n" "DAT" "$(date +'%d-%m-%y %H:%M:%S')" > "$PANEL_FIFO"
-    printf "%s%s\n" "MPD" "$(mpc -h /home/kevin/.config/mpd/socket current)" > "$PANEL_FIFO"
+    printf "%s%s\n" "MPD" "$(mpc current)" > "$PANEL_FIFO"
     sleep 1s;
 done &
 

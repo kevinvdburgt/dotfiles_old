@@ -90,14 +90,18 @@ while read -r line; do
 
         ## Screen 2 (left)
         printf "%s" "${OFFSET}%{S1}%{l}${OFFSET}"
-        printf "%s" "${wminfo[2]}  |  ${var_title}"
+        printf "%s" "${wminfo[2]}| ${var_title}"
 
         ## Screem 2 (right)
         printf "%s" "%{S1}%{r}"
 
-        [ ! -z "$var_mpd" ] && printf "%s" "${var_mpd}  |  "
-        printf "%s" "Email 0, 0, 0  |  "
-        printf "%s" "${var_dat}"
+        [ ! -z "$var_mpd" ] && printf "%s" "${var_mpd} | "
+        #printf "%s" "Email 0, 0 | "
+        printf "%s" "${var_dat} "
+
+        #printf "%s" " %{B#AA1793d0} # %{B#AA000000}"
+
+        #printf "%s" "%{S1}%{c}%{B#AAFF0000} Notifications: 4 %{B#AA000000}"
 
         ## Screen 3 (left)
         printf "%s" "${OFFSET}%{S2}%{l}${OFFSET}"

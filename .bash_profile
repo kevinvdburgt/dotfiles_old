@@ -11,6 +11,6 @@ export HISTSIZE=10000
 export HISTFILESIZE=${HISTSIZE}
 
 ## Aliasses
-alias subl="subl3"
-alias mpc="mpc -h /home/kevin/.config/mpd/socket"
-alias ncmp="ncmpcpp -h /home/kevin/.config/mpd/socket"
+#alias subl="subl3"
+#alias mpc="mpc -h /home/kevin/.config/mpd/socket"
+#alias ncmp="ncmpcpp -h /home/kevin/.config/mpd/socket"
