@@ -62,7 +62,7 @@ dotfile_symlink $HOME/.dotfiles/.xinitrc $HOME/.xinitrc
 ## 6. Update the wallpaper
 if [ ! "$(dotfile_get $DOTCONFIG_CONFIGFILE currentWallpaper)" = $DOTCONFIG_WALLPAPER ]; then
   echo "Downloading new wallpaper.."
-  curl $DOTCONFIG_WALLPAPER -o $HOME/.config/wallpaper.png
+  curl $DOTCONFIG_WALLPAPER -o $HOME/.config/wallpaper.jpg
   dotfile_set $DOTCONFIG_CONFIGFILE currentWallpaper $DOTCONFIG_WALLPAPER
 fi
 

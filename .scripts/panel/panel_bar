@@ -65,16 +65,24 @@ while read -r line; do
         printf "%s" " ${var_dat}"
     elif [ $MONITORCOUNT -eq 2 ]; then
         ## Screen 1 (left)
-        printf "%s" "%{S0}%{l}${OFFSET}"
-        printf "%s" "${wminfo[0]}"
+        ## Screen 2 (left)
+        printf "%s" "${OFFSET}%{S0}%{l}${OFFSET}"
+        printf "%s" "${wminfo[0]}| ${var_title}"
 
-        ## Screen 1 (right)
+        ## Screem 2 (right)
         printf "%s" "%{S0}%{r}"
-        printf "%s" " ${var_dat}"
+
+        [ ! -z "$var_mpd" ] && printf "%s" "${var_mpd} | "
+        #printf "%s" "Email 0, 0 | "
+        printf "%s" "${var_dat} "
+
+        #printf "%s" " %{B#AA1793d0} # %{B#AA000000}"
+
+        printf "%s" "%{S0}%{c}%{B#AAFF0000} ERRORS: 4 %{B#AA000000}"
 
         ## Screen 2 (left)
         printf "%s" "${OFFSET}%{S1}%{l}${OFFSET}"
-        printf "%s" "${wminfo[2]}"
+        printf "%s" "${wminfo[1]}"
 
         ## Screem 2 (right)
         printf "%s" "%{S1}%{r}"
@@ -101,7 +109,7 @@ while read -r line; do
 
         #printf "%s" " %{B#AA1793d0} # %{B#AA000000}"
 
-        #printf "%s" "%{S1}%{c}%{B#AAFF0000} Notifications: 4 %{B#AA000000}"
+        printf "%s" "%{S1}%{c}%{B#AAFF0000} ERRORS: 4 %{B#AA000000}"
 
         ## Screen 3 (left)
         printf "%s" "${OFFSET}%{S2}%{l}${OFFSET}"
