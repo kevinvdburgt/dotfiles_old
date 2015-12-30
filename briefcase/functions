@@ -1,0 +1,22 @@
+#!/bin/bash
+
+## Syntax: briefcase_symlink [source] [destination]
+function briefcase_symlink
+{
+  if [ ! -d $1 ] && [ ! -f $1 ]; then
+    echo "Error, the source ($1) does not exists"
+    return
+  fi
+
+  if [ ! "$(readlink $2)" = "$1" ]; then
+    if [ -d $2 ] || [ -f $2 ]; then
+      echo "Warning! The destination file or folder already exists"
+      echo "Moving $2 to $HOME/.dotfiles/briefcase/backup"
+      read -p "Continue? (y/N)"
+      [[ ! $REPLY =~ ^[Yy]$ ]] && return
+      mv $2 $HOME/.dotfiles/briefcase/backup
+    fi
+   ln -s $1 $2
+  fi
+}
+

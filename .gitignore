@@ -1,0 +1,3 @@
+briefcase/backup/*
+!briefcase/backup/.gitkeep
+*.swp

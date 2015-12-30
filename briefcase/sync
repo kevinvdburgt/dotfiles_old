@@ -1,0 +1,20 @@
+#!/bin/bash
+
+source $HOME/.dotfiles/briefcase/functions
+
+echo "Syncronizing dotfiles"
+
+source $HOME/.dotfiles/briefcase/functions
+
+## Setup the dotfiles
+briefcase_symlink $HOME/.dotfiles/.Xresources $HOME/.Xresources
+briefcase_symlink $HOME/.dotfiles/.bash_profile $HOME/.bash_profile
+briefcase_symlink $HOME/.dotfiles/.gtkrc-2.0 $HOME/.gtkrc-2.0
+briefcase_symlink $HOME/.dotfiles/.xinitrc $HOME/.xinitrc
+
+briefcase_symlink $HOME/.dotfiles/.config/bspwm $HOME/.config/bspwm
+briefcase_symlink $HOME/.dotfiles/.config/sxhkd $HOME/.config/sxhkd
+
+briefcase_symlink $HOME/.dotfiles/.scripts $HOME/.scripts
+briefcase_symlink $HOME/.dotfiles/.fonts $HOME/.fonts
+

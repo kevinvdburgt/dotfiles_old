@@ -1,0 +1,58 @@
+#! /bin/sh
+
+## Desktop computer at home
+if [ "$(hostname)" == "blacklist" ]; then
+    bspc monitor ^1 -s ^3
+fi
+
+## Desktop computer at my internship
+if [ "$(hostname)" == "charmander" ]; then
+    xrandr --output HDMI-0 --off --output DVI-I-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-I-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-I-3 --off --output DVI-I-2 --off
+    bspc monitor ^1 -s ^2
+fi
+
+## Prepare and give some names to the virtual desktops
+C=0
+for monitor in $(bspc query -M); do
+    bspc monitor $monitor \
+        -n "$C" \
+        -d "001" "010" "011" "100" "101" "111"
+
+    let C++
+done
+unset C
+
+## Bspwm border and gaps
+bspc config border_width        1
+bspc config window_gap          5
+
+## Bspwm behavior
+bspc config split_ratio         0.50
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config focus_by_distance   true
+
+## Bspwm window border colors
+bspc config focused_border_color        "#111111"
+bspc config normal_border_color         "#333333"
+bspc config active_border_color         "#333333"
+
+bspc config focused_locked_border_color "#00C7D8"
+bspc config normal_locked_border_color  "#708D8F"
+bspc config active_locked_border_color  "#808C8D"
+
+bspc config urgent_border_color         "#FF0000"
+bspc config presel_border_color         "#FF0000"
+
+## Cursor settings, i like focus following the pointer :-)
+bspc config focus_follows_pointer       true
+
+## Bspwm rules
+#bspc rule -a Gimp desktop=^8 follow=on floating=on
+#bspc rule -a Chromium desktop=^2
+#bspc rule -a mplayer2 floating=on
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
+
+## Launch scripts, applications and other stuff for bspwm
+$HOME/.scripts/panel/panel &
