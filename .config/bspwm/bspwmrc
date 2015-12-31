@@ -55,4 +55,4 @@ bspc config focus_follows_pointer       true
 #bspc rule -a Screenkey manage=off
 
 ## Launch scripts, applications and other stuff for bspwm
-$HOME/.scripts/panel/panel &
+#$HOME/.scripts/panel/panel &
