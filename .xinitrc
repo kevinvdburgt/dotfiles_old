@@ -18,7 +18,7 @@ setxkbmap -option caps:escape
 
 ## Starting up some daemons
 #usdiskie &
-#pulseaudio --start &
+pulseaudio --start &
 #mpd &
 #mpdscribble &
 #modipy &
