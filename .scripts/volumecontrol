@@ -1,0 +1,49 @@
+#!/bin/bash
+
+PREFERED_CARD="G930"
+VOLUME_STEPS=2
+
+case $1 in
+  # Increase the volume
+  increase)
+    if ponymix list-cards | grep $PREFERED_CARD; then
+      ponymix -d $PREFERED_CARD increase $VOLUME_STEPS
+    else
+      ponymix increase $VOLUME_STEPS
+    fi
+    ;;
+
+  # Decrease the volume
+  decrease)
+    if ponymix list-cards | grep $PREFERED_CARD; then
+      ponymix -d $PREFERED_CARD decrease $VOLUME_STEPS
+    else
+      ponymix decrease $VOLUME_STEPS
+    fi
+    ;;
+
+  # Toggle volume
+  toggle)
+    if ponymix list-cards | grep $PREFERED_CARD; then
+      ponymix -d $PREFERED_CARD toggle
+    else
+      ponymix toggle
+    fi
+    ;;
+
+  # Get the current volume
+  get)
+    if ponymix list-cards | grep $PREFERED_CARD; then
+      ponymix -d $PREFERED_CARD get-volume
+    else
+      ponymix get-volume
+    fi
+    ;;
+
+  # Display the usage
+  *)
+    echo "Usage: $0 {increase|decrease|toggle|get}"
+    exit 1
+    ;;
+esac
+
