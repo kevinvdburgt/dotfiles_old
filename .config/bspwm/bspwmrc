@@ -1,14 +1,14 @@
 #! /bin/sh
 
 ## Desktop computer at home
-if [ "$(hostname)" == "blacklist" ]; then
-    bspc monitor ^1 -s ^3
-fi
+# if [ "$(hostname)" == "blacklist" ]; then
+#
+# fi
 
 ## Desktop computer at my internship
 if [ "$(hostname)" == "charmander" ]; then
-    xrandr --output HDMI-0 --off --output DVI-I-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-I-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-I-3 --off --output DVI-I-2 --off
-    bspc monitor ^1 -s ^2
+  xrandr --output HDMI-0 --off --output DVI-I-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-I-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-I-3 --off --output DVI-I-2 --off
+  bspc monitor ^1 -s ^2
 fi
 
 ## Prepare and give some names to the virtual desktops
@@ -46,7 +46,7 @@ bspc config presel_border_color         "#FF0000"
 
 ## Cursor settings, i like focus following the pointer :-)
 bspc config focus_follows_pointer       true
-
+echo "hi"
 ## Bspwm rules
 #bspc rule -a Gimp desktop=^8 follow=on floating=on
 #bspc rule -a Chromium desktop=^2

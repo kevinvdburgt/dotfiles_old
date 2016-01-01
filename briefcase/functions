@@ -37,3 +37,20 @@ function briefcase_get
   [ -f $1 ] && grep -oP ="$2=\K.*" $1
 }
 
+## Syntax: briefcase_git [repository] [name] [exec after update]
+function briefcase_git
+{
+  if [ ! -d "$HOME/.source/$2" ]; then
+    mkdir -p $HOME/.source/$2
+    cd $HOME/.source/$2
+    git clone $1 .
+    eval $3
+  else
+    cd $HOME/.source/$2
+    git fetch origin
+    if [[ "$(git log HEAD..origin/master --oneline)" != "" ]]; then
+      git merge origin/master
+      eval $3
+    fi
+  fi
+}
