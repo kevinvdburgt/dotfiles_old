@@ -26,7 +26,9 @@ briefcase_git https://github.com/baskerville/sxhkd.git sxhkd 'make && cp -u sxhk
 briefcase_git https://github.com/LemonBoy/bar.git bar 'make && cp -u lemonbar $HOME/.bin'
 briefcase_git https://github.com/baskerville/xtitle.git xtitle 'make && cp -u xtitle $HOME/.bin'
 
-## Wallpaper update
-#if [ ! "$(briefcase_get $BRIEFCASE_CONFIG_FILE wallpaper)" = $BRIEFCASE_WALLPAPER ]; then
-#  briefcase_set $BRIEFCASE_CONFIG_FILE wallpaper $BRIEFCASE_WALLPAPER
-#fi
+# Update wallpaper
+if [[ "$(briefcase_get wallpaper)" != "$BRIEFCASE_WALLPAPER" ]]; then
+  curl $BRIEFCASE_WALLPAPER -o $HOME/.config/wallpaper.$BRIEFCASE_WALLPAPER_EXTENSION
+  feh --bg-scale $HOME/.config/wallpaper.$BRIEFCASE_WALLPAPER_EXTENSION
+  briefcase_set wallpaper $BRIEFCASE_WALLPAPER
+fi

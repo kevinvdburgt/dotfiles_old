@@ -20,21 +20,27 @@ function briefcase_symlink
   fi
 }
 
-## Syntax: briefcase_set [file] [key] [value]
+## Syntax: briefcase_set [key] [value]
 function briefcase_set
 {
-  [ ! -f $1 ] && touch $1
-  if grep -q "^$2=" "$1"; then
-    sed "s/^$2=.*/$2=$3/" -i $1
+  [ ! -f $HOME/.dotfiles/briefcase/settings.ini ] && touch $HOME/.dotfiles/briefcase/settings.ini
+  if grep -q "^$1=" "$HOME/.dotfiles/briefcase/settings.ini"; then
+    ESCAPED=$(echo $2 | sed -e 's/[]\/$*.^|[]/\\&/g')
+    sed "s/^$1=.*/$1=$ESCAPED/" -i "$HOME/.dotfiles/briefcase/settings.ini"
   else
-    echo "$2=$3" >> $1
+    echo "$1=$2" >> $HOME/.dotfiles/briefcase/settings.ini
   fi
 }
 
-## Syntax: briefcase_get [file] [key]
+## Syntax: briefcase_get [key]
 function briefcase_get
 {
-  [ -f $1 ] && grep -oP ="$2=\K.*" $1
+  if [[ -f "$HOME/.dotfiles/briefcase/settings.ini" ]]; then
+    RESULT=$(grep -oP "$1=\K.*" "$HOME/.dotfiles/briefcase/settings.ini")
+    echo $RESULT || ""
+  else
+    echo ""
+  fi
 }
 
 ## Syntax: briefcase_git [repository] [name] [exec after update]

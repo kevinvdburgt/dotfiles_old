@@ -11,4 +11,9 @@ elif [[ $OSTYPE == darwin* ]]; then
   source $HOME/.dotfiles/briefcase/sync_osx.sh
 else
   echo "Cannot install or syncronize the dotfiles."
+  exit 1
 fi
+
+# Write the last sync date and add to the sync counter
+briefcase_set sync_last "$(date +'%d-%m-%y %H:%M:%S')"
+briefcase_set sync_count $(($(briefcase_get sync_count)+1))

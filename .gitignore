@@ -1,3 +1,4 @@
+briefcase/settings.ini
 briefcase/backup/*
 !briefcase/backup/.gitkeep
 *.swp

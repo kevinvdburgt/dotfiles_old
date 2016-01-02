@@ -1,7 +1,4 @@
 #!/bin/bash
 
-BRIEFCASE_CONFIG_FILE=$HOME/.dotfileconfig
-
 BRIEFCASE_WALLPAPER=http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-272583.jpg
 BRIEFCASE_WALLPAPER_EXTENSION=jpg
-
