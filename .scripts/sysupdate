@@ -1,15 +1,8 @@
 #!/bin/bash
 
-## Update system packages using pacman
-sudo pacman -Syu
-
-## Update system AUR packages using yaourt
-#yaourt -Syua
-
-## Download new dotfiles
+# Download new dotfiles
 cd $HOME/.dotfiles
 git pull
 
-## Run the briefcase updater
+# Run the briefcase sync
 $HOME/.dotfiles/briefcase/sync
-

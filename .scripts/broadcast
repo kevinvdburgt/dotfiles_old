@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# @TODO: Warning, this is a unfinished snippet!
+echo "Unfinished snippet!"
+exit 1
+
+twitch()
+{
+    ffmpeg \
+        -f x11grab -s 1920x1080 -r 30 -i :0.0+1920,0 \
+        -f alsa -ac 2 -i pulse \
+        -vcodec libx264 -preset ultrafast -s 1920x1080 -pix_fmt yuv420p \
+        -acodec libmp3lame -ab 128k -ar 44100 -threads 0 -async 24000 \
+        -f flv "rtmp://live.justin.tv/app/$PRIVATE_TWITCHKEY"
+}
+
+timelapse()
+{
+    while [ true ]; do
+        scrot
+        sleep 10s;
+    done
+}
+
+#treaming
+#echo $PRIVATE_TWITCHKEY
+#streaming
+twitch

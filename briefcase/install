@@ -7,4 +7,3 @@ else
   git clone https://github.com/kevinvdburgt/dotfiles.git $HOME/.dotfiles
   source $HOME/.dotfiles/briefcase/sync
 fi
-
