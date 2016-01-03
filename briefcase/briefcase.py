@@ -1,5 +1,6 @@
 import os
 import subprocess
+import shutil
 
 class Briefcase:
     def symlink(self, source, destination):
@@ -25,7 +26,7 @@ class Briefcase:
             if response != "y" and response != "yes":
                 return
 
-            os.rename(os.path.expanduser(destination), os.path.expanduser('~/.dotfiles/briefcase/backup/'))
+            shutil.move(os.path.expanduser(destination), os.path.expanduser('~/.dotfiles/briefcase/backup/'))
 
         # Checks are done, create the link
         os.symlink(os.path.expanduser(source), os.path.expanduser(destination))
