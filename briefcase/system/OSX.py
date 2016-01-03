@@ -11,5 +11,8 @@ class SyncOSX:
         localset_wallpaper_remote_url = briefcase.get('localset', 'wallpaper', 'remote_url')
         if settings_wallpaper_remote_url != localset_wallpaper_remote_url:
             briefcase.shell('curl ' + settings_wallpaper_remote_url + ' -o wallpaper.jpg', True, '~/.config/');
-            
+            briefcase.shell('osascript -e "' +
+                'tell application\"Finder\"\n' +
+                'set desktop picture to POSIX file \"$HOME/.config/wallpaper.jpg\"'+
+                '"')
             briefcase.set('localset', 'wallpaper', 'remote_url', settings_wallpaper_remote_url)
