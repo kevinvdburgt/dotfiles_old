@@ -1,6 +1,7 @@
 import os
 import subprocess
 import shutil
+import configparser
 
 class Briefcase:
     def symlink(self, source, destination):
@@ -33,6 +34,9 @@ class Briefcase:
         print("Symlink created: {:s}".format(os.path.expanduser(source)))
 
     def shell(self, command, shell=True, cwd=None):
+        if cwd != None and cwd[0] == '~':
+            cwd=os.path.expanduser(cwd)
+
         subprocess.call(command, shell=shell, cwd=cwd)
 
     def gitsource(self, repository, projectname, shellcommand):
@@ -49,3 +53,32 @@ class Briefcase:
             if result != '':
                 self.shell('git merge origin/master', True, projectPath)
                 self.shell(shellcommand, True, projectPath)
+
+    def set(self, config, section, key, value):
+        configFile = os.path.expanduser('~/.dotfiles/briefcase/' + config + '.ini')
+        config = configparser.ConfigParser()
+
+        if os.path.isfile(configFile):
+            config.read(configFile)
+
+        if section not in config.sections():
+            config.add_section(section)
+
+        config.set(section, key, str(value))
+
+        with open(configFile, 'w') as configfile:
+            config.write(configfile)
+
+    def get(self, config, section, key):
+        configFile = os.path.expanduser('~/.dotfiles/briefcase/' + config + '.ini')
+        config = configparser.ConfigParser()
+
+        if os.path.isfile(configFile) == False:
+            return ''
+
+        config.read(configFile)
+
+        if section not in config.sections():
+            return ''
+
+        return config.get(section, key)

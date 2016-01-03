@@ -33,3 +33,22 @@ class SyncArchLinux:
 
         briefcase.gitsource('https://github.com/baskerville/xtitle.git', 'xtitle',
             'make && cp -u xtitle $HOME/.bin')
+
+        # Update wallpaper
+        settings_wallpaper_remote_url = briefcase.get('settings', 'wallpaper', 'remote_url')
+        localset_wallpaper_remote_url = briefcase.get('localset', 'wallpaper', 'remote_url')
+        if settings_wallpaper_remote_url != localset_wallpaper_remote_url:
+            briefcase.shell('curl ' + settings_wallpaper_remote_url + ' -o wallpaper.jpg', True, '~/.config/');
+            briefcase.shell('feh --bg-scale $HOME/.config/wallpaper.jpg')
+            briefcase.set('localset', 'wallpaper', 'remote_url', settings_wallpaper_remote_url)
+
+        # Update stats
+        count = briefcase.get('localset', 'stats', 'count')
+
+        if count == '':
+            count = 0
+        else:
+            count = int(count)
+
+        briefcase.set('localset', 'stats', 'last', '-')
+        briefcase.set('localset', 'stats', 'count', count + 1)
