@@ -1,5 +1,5 @@
 class SyncOSX:
-    def __init__(self):
+    def __init__(self, briefcase):
 
         # Symlink dotfiles
         briefcase.symlink('~/.dotfiles/.bash_profile',          '~/.bash_profile')
