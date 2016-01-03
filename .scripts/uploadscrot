@@ -31,4 +31,3 @@ FILELOCATION="https://f.zdev.com/dl/$FILELOCATION"
 # Put the filelocation in the clipboard
 echo $FILELOCATION | xclip # Middlemouse clipboard
 echo $FILELOCATION | xclip -selection c # CTRL+V clipboard
-
