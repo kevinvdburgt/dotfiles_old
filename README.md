@@ -19,7 +19,7 @@ curl https://raw.githubusercontent.com/kevinvdburgt/dotfiles/master/briefcase/in
 
 `.scripts/` This folder contains a lot of usefull scripts and utilities i often use.
 
-`briefcase/` This folder contains a little bash application which keeps my dotfiles in sync across different machines.
+`briefcase/` This folder contains a little Python application which keeps my dotfiles in sync across different machines.
 
 ## TODO:
 
