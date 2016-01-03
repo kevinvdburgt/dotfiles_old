@@ -21,6 +21,8 @@ class SyncArchLinux:
         briefcase.symlink('~/.dotfiles/.scripts',               '~/.scripts')
         briefcase.symlink('~/.dotfiles/.fonts',                 '~/.fonts')
 
+        briefcase.symlink('~/.dotfiles/.atom/config.cson',      '~/.atom/config.cson')
+
         # Git projects from source
         briefcase.gitsource('https://github.com/baskerville/bspwm.git', 'bspwm',
             'make && cp -u bspwm bspc $HOME/.bin')

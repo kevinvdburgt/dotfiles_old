@@ -1,0 +1,31 @@
+"*":
+  welcome:
+    showOnStartup: false
+  editor:
+    invisibles: {}
+    fontFamily: "Source Code Pro"
+    fontSize: 12
+    lineHeight: 1.2
+  core:
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax-dark"
+    ]
+    autoHideMenuBar: true
+  "one-dark-ui":
+    layoutMode: "Compact"
+  "atom-material-ui":
+    ui:
+      slimScrollbar: true
+      accentColor: "Cyan"
+    tabs:
+      showTabIcons: "Show on all tabs"
+      tabMinWidth: true
+      tabSize: "Small"
+    fonts:
+      useRobotoInUI: true
+    treeView:
+      compactTreeView: true
+    panels:
+      panelContrast: true
+      altCmdPalette: false
