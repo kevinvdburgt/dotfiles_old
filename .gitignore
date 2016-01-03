@@ -1,4 +1,5 @@
-briefcase/settings.ini
+briefcase/settings_local.ini
 briefcase/backup/*
 !briefcase/backup/.gitkeep
 *.swp
+__pycache__
