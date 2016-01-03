@@ -1,9 +1,14 @@
 #!/bin/bash
 
+# @TODO: Check if python3 is installed
+
+
+# Check if the .dotfiles folder already exists
 if [ -d "$HOME/.dotfiles" ]; then
   echo "It seems that the folder $HOME/.dotfiles already exists on your system."
   echo "Please rename, delete or move the .dotfiles folder and run this script again."
-else
-  git clone https://github.com/kevinvdburgt/dotfiles.git $HOME/.dotfiles
-  source $HOME/.dotfiles/briefcase/sync
+  exit 1
 fi
+
+git clone https://github.com/kevinvdburgt/dotfiles.git $HOME/.dotfiles
+$HOME/.dotfiles/briefcase/sync
