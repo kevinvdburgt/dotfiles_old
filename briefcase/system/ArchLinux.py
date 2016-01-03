@@ -1,8 +1,6 @@
 class SyncArchLinux:
     def __init__(self, briefcase):
 
-        briefcase.symlink('~/test/lol.txt', '~/test/hmm.txt')
-
         # Install new packages from pacman
         briefcase.shell('sudo pacman -Syu')
 
@@ -22,3 +20,16 @@ class SyncArchLinux:
 
         briefcase.symlink('~/.dotfiles/.scripts',               '~/.scripts')
         briefcase.symlink('~/.dotfiles/.fonts',                 '~/.fonts')
+
+        # Git projects from source
+        briefcase.gitsource('https://github.com/baskerville/bspwm.git', 'bspwm',
+            'make && cp -u bspwm bspc $HOME/.bin')
+
+        briefcase.gitsource('https://github.com/baskerville/sxhkd.git', 'sxhkd',
+            'make && cp -u sxhkd $HOME/.bin')
+
+        briefcase.gitsource('https://github.com/LemonBoy/bar.git', 'lemonbar',
+            'make && cp -u lemonbar $HOME/.bin')
+
+        briefcase.gitsource('https://github.com/baskerville/xtitle.git', 'xtitle',
+            'make && cp -u xtitle $HOME/.bin')

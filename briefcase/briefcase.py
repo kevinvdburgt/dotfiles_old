@@ -32,5 +32,20 @@ class Briefcase:
         os.symlink(os.path.expanduser(source), os.path.expanduser(destination))
         print("Symlink created: {:s}".format(os.path.expanduser(source)))
 
-    def shell(self, command):
-        subprocess.call(command, shell=True)
+    def shell(self, command, shell=True, cwd=None):
+        subprocess.call(command, shell=shell, cwd=cwd)
+
+    def gitsource(self, repository, projectname, shellcommand):
+        projectPath = os.path.expanduser('~/.source/' + projectname)
+
+        # Create new project
+        if os.path.isdir(projectPath) == False:
+            self.shell('mkdir -p ' + projectPath)
+            self.shell('git clone ' + repository + ' ' + projectPath)
+            self.shell(shellcommand, True, projectPath)
+        else:
+            self.shell('git fetch origin', True, projectPath)
+            result = subprocess.check_output('git log HEAD..origin/master --oneline', cwd=projectPath, shell=True).decode('utf-8')
+            if result != '':
+                self.shell('git merge origin/master', True, projectPath)
+                self.shell(shellcommand, True, projectPath)
