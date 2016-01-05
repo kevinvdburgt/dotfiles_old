@@ -12,6 +12,7 @@ class SyncArchLinux:
         briefcase.symlink('~/.dotfiles/.bash_profile',          '~/.bash_profile')
         briefcase.symlink('~/.dotfiles/.gtkrc-2.0',             '~/.gtkrc-2.0')
         briefcase.symlink('~/.dotfiles/.xinitrc',               '~/.xinitrc')
+        briefcase.symlink('~/.dotfiles/.gitconfig',                 '~/.gitconfig')
 
         briefcase.symlink('~/.dotfiles/.config/bspwm',          '~/.config/bspwm')
         briefcase.symlink('~/.dotfiles/.config/sxhkd',          '~/.config/sxhkd')

@@ -5,8 +5,11 @@ class SyncOSX:
 
         # Symlink dotfiles
         briefcase.symlink('~/.dotfiles/.bash_profile',          '~/.bash_profile')
+        briefcase.symlink('~/.dotfiles/.gitconfig',                 '~/.gitconfig')
 
         briefcase.symlink('~/.dotfiles/.scripts',               '~/.scripts')
+
+        briefcase.symlink('~/.dotfiles/.atom/config.cson',      '~/.atom/config.cson')
 
         # Update wallpaper
         settings_wallpaper_remote_url = briefcase.get('settings', 'wallpaper', 'remote_url')
