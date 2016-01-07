@@ -4,8 +4,8 @@
   editor:
     invisibles: {}
     fontFamily: "Source Code Pro"
-    fontSize: 12
     lineHeight: 1.2
+    fontSize: 12
   core:
     themes: [
       "atom-material-ui"
