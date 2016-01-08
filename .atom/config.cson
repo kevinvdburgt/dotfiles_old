@@ -4,9 +4,9 @@
   editor:
     invisibles: {}
     fontFamily: "Source Code Pro"
-    fontSize: 12
     lineHeight: 1.2
     tabLength: 4
+    fontSize: 12
   core:
     themes: [
       "atom-material-ui"
@@ -30,3 +30,5 @@
     panels:
       panelContrast: true
       altCmdPalette: false
+  "exception-reporting":
+    userId: "d6cc3be7-225a-6f27-7635-675a25317d7d"
