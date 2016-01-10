@@ -31,10 +31,10 @@ Wallpaper on both ArchLinux and OSX:
 ### ArchLinux
 
 Busy desktop:
-![Busy]( https://f.zdev.com/dl/xjxtca.png )
+![Busy](https://f.zdev.com/dl/xjxtca.png)
 
 Clean desktop:
-![Clean]( https://f.zdev.com/dl/jwdana.png )
+![Clean](https://f.zdev.com/dl/fqjyxu.png)
 
 ### OSX
 Not ready yet :)
