@@ -5,7 +5,8 @@ class SyncOSX:
 
         # Symlink dotfiles
         briefcase.symlink('~/.dotfiles/.bash_profile',          '~/.bash_profile')
-        briefcase.symlink('~/.dotfiles/.gitconfig',                 '~/.gitconfig')
+        briefcase.symlink('~/.dotfiles/.gitconfig',             '~/.gitconfig')
+        briefcase.symlink('~/.dotfiles/.gitignore_global',      '~/.gitignore_global')
 
         briefcase.symlink('~/.dotfiles/.scripts',               '~/.scripts')
 

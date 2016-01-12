@@ -13,6 +13,9 @@
       "atom-material-syntax-dark"
     ]
     autoHideMenuBar: true
+    ignoredNames: [
+      ".DS_Store"
+    ]
   "one-dark-ui":
     layoutMode: "Compact"
   "atom-material-ui":
