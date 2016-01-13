@@ -26,7 +26,7 @@ curl https://raw.githubusercontent.com/kevinvdburgt/dotfiles/master/briefcase/in
 ## Images
 
 Wallpaper on both ArchLinux and OSX:
-![Wallpaper](http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-224224.jpg)
+![Wallpaper](http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-250824.jpg)
 
 ### ArchLinux
 
