@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Shortcut to enable the DKMS for VirtualBox
+sudo /sbin/rcvboxdrv setup
+
