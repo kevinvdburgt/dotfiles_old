@@ -4,12 +4,12 @@
 case $1 in
   # Create a screenshot by drawing a rectangle or clicking on a window
   select)
-    scrot -q 100 -s /tmp/scrot.png
+    scrot -s /tmp/scrot.png
     ;;
 
   # Create a screenshot from all screens
   all)
-    scrot -q 100 /tmp/scrot.png
+    scrot /tmp/scrot.png
     ;;
 
   # Display the screenshot usage
