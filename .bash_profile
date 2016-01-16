@@ -4,6 +4,7 @@
 
 ## Editor settings
 export EDITOR=vim
+export TERM=xterm-256color
 
 ## Path settings
 export PATH=$PATH:$HOME/.bin:$HOME/.scripts
