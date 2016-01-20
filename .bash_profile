@@ -13,4 +13,5 @@ export HISTSIZE=10000
 export HISTFILESIZE=${HISTSIZE}
 
 ## Aliasses
+alias ll="ls -hal"
 
