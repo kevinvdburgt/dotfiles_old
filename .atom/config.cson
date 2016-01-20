@@ -5,7 +5,6 @@
     invisibles: {}
     fontFamily: "Source Code Pro"
     lineHeight: 1.2
-    tabLength: 4
     fontSize: 12
   core:
     themes: [
