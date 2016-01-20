@@ -29,12 +29,7 @@ Wallpaper on both ArchLinux and OSX:
 ![Wallpaper](http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-250824.jpg)
 
 ### ArchLinux
-
-Busy desktop:
-![Busy]( https://f.zdev.com/dl/sfoczm.png)
-
-Clean desktop:
-![Clean]( https://f.zdev.com/dl/whfrld.png)
+`TODO`
 
 ### OSX
-Not ready yet :)
+`TODO`

@@ -6,6 +6,7 @@
     fontFamily: "Source Code Pro"
     lineHeight: 1.2
     fontSize: 12
+    tabLength: 4
   core:
     themes: [
       "atom-material-ui"
