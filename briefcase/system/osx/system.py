@@ -17,6 +17,7 @@ class System:
         briefcase.symlink('~/.dotfiles/.screenrc',              '~/.screenrc')
         briefcase.symlink('~/.dotfiles/.curlrc',                '~/.curlrc')
         briefcase.symlink('~/.dotfiles/.bash_prompt',           '~/.bash_prompt')
+        briefcase.symlink('~/.dotfiles/.exports',               '~/.exports')
 
         # Update wallpaper
         settings_wallpaper_remote_url = briefcase.get('settings', 'wallpaper', 'remote_url')
