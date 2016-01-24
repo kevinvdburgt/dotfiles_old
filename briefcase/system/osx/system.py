@@ -1,9 +1,8 @@
 import os
 
-class SyncOSX:
+class System:
     def __init__(self, briefcase):
-
-        # Install / update software
+        # Install and update software packages from brew
         briefcase.shell('brew update')
         briefcase.shell('brew upgrade --all')
 
@@ -11,10 +10,13 @@ class SyncOSX:
         briefcase.symlink('~/.dotfiles/.bash_profile',          '~/.bash_profile')
         briefcase.symlink('~/.dotfiles/.gitconfig',             '~/.gitconfig')
         briefcase.symlink('~/.dotfiles/.gitignore_global',      '~/.gitignore_global')
-
         briefcase.symlink('~/.dotfiles/.scripts',               '~/.scripts')
-
         briefcase.symlink('~/.dotfiles/.atom/config.cson',      '~/.atom/config.cson')
+        briefcase.symlink('~/.dotfiles/.wgetrc',                '~/.wgetrc')
+        briefcase.symlink('~/.dotfiles/.vimrc',                 '~/.vimrc')
+        briefcase.symlink('~/.dotfiles/.screenrc',              '~/.screenrc')
+        briefcase.symlink('~/.dotfiles/.curlrc',                '~/.curlrc')
+        briefcase.symlink('~/.dotfiles/.bash_prompt',           '~/.bash_prompt')
 
         # Update wallpaper
         settings_wallpaper_remote_url = briefcase.get('settings', 'wallpaper', 'remote_url')
