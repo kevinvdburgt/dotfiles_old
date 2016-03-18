@@ -11,7 +11,8 @@ if platform.system() == "Darwin":
     print("Detected OSX...")
     module = importlib.import_module('system.osx.system')
 else:
-    print("No machine detected...")
-    sys.exit()
+    module = importlib.import_module('system.archlinux.system')	    
+    #print("No machine detected...")
+    #sys.exit()
 
 getattr(module, 'System')(Briefcase())
