@@ -1,19 +1,29 @@
 "*":
   "atom-material-ui":
+    colors:
+      abaseColor:
+        red: 70
+        green: 70
+        blue: 70
+        alpha: 1
+      predefinedColor: "Blue"
     fonts:
       useRobotoInUI: true
     panels:
       altCmdPalette: false
       panelContrast: true
     tabs:
+      compactTabs: true
       showTabIcons: "Show on all tabs"
       tabMinWidth: true
       tabSize: "Small"
     treeView:
-      compactTreeView: true
+      compactList: true
+      compactTreeView: false
     ui:
       accentColor: "Cyan"
-      slimScrollbar: true
+      panelContrast: true
+      slimScrollbar: false
   core:
     autoHideMenuBar: true
     disabledPackages: [
@@ -25,13 +35,14 @@
     ]
     themes: [
       "atom-material-ui"
-      "atom-material-syntax-light"
+      "atom-dark-syntax"
     ]
   editor:
     fontFamily: "Source Code Pro"
     fontSize: 12
     invisibles: {}
     lineHeight: 1.2
+    scrollPastEnd: true
   "exception-reporting":
     userId: "d6cc3be7-225a-6f27-7635-675a25317d7d"
   "linter-phpcs": {}

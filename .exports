@@ -8,7 +8,7 @@ export TERM=xterm-256color
 export PATH=$PATH:$HOME/.bin:$HOME/.scripts
 
 # OSX Only
-export PATH=$PATH:/usr/local/Cellar/php56/5.6.17/bin/
+[[ $(uname) = 'Darwin' ]] export PATH=$PATH:/usr/local/Cellar/php56/5.6.17/bin/
 
 # Bash settings
 export HISTSIZE=10000

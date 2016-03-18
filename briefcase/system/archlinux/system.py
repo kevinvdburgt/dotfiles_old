@@ -1,4 +1,6 @@
-class SyncArchLinux:
+import os
+
+class System:
     def __init__(self, briefcase):
 
         # Install new packages from pacman
