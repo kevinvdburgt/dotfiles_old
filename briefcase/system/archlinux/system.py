@@ -12,6 +12,7 @@ class System:
         # Symlink dotfiles
         briefcase.symlink('~/.dotfiles/.Xresources',            '~/.Xresources')
         briefcase.symlink('~/.dotfiles/.bash_profile',          '~/.bash_profile')
+        briefcase.symlink('~/.dotfiles/.exports',               '~/.exports')
         briefcase.symlink('~/.dotfiles/.gtkrc-2.0',             '~/.gtkrc-2.0')
         briefcase.symlink('~/.dotfiles/.xinitrc',               '~/.xinitrc')
         briefcase.symlink('~/.dotfiles/.gitconfig',             '~/.gitconfig')
