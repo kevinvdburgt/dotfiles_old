@@ -86,7 +86,7 @@ while read -r line; do
 
     # Screen 1 (right)
     printf "%s" "%{S0}%{r}"
-    printf "%s" ">>> ZDEV 1 <<<"
+    printf "%s" ""
 
     # Screen 2 (left)
     printf "%s" "${SCREEN_OFFSET}%{S1}%{l}${SCREEN_OFFSET}"
@@ -94,7 +94,9 @@ while read -r line; do
 
     # Screen 2 (right)
     printf "%s" "%{S1}%{r}"
-    printf "%s" "Battery: 100%   Volume: $VAR_VOL%   Date: $VAR_DAT"
+    printf "%s" "%{F#f87687}[%{F#FAFAFA} Battery: 100% "
+    printf "%s" "%{F#f87687}] [%{F#FAFAFA} Volume: $VAR_VOl% "
+    printf "%s" "%{F#f87687}] [%{F#FAFAFA} Date: $VAR_DAT %{F#f87687}]%{F#FAFAFA} "
 
     # Screen 3 (left)
     printf "%s" "${SCREEN_OFFSET}%{S2}%{l}${SCREEN_OFFSET}"
@@ -102,7 +104,7 @@ while read -r line; do
 
     # Screen 3 (right)
     printf "%s" "%{S2}%{r}"
-    printf "%s" ">>> ZDEV 3 <<<"
+    printf "%s" ""
   fi
 
   printf "%s\n" "${SCREEN_OFFSET}"

@@ -2,9 +2,9 @@
 
 LEMONBAR_FIFO=/tmp/lemonbar-fifo
 LEMONBAR_HEIGHT=16
-LEMONBAR_FOREGROUND="#FFFFFFFF"
-LEMONBAR_BACKGROUND="#99000000"
-LEMONBAR_FONT="-benis-lemon-abunai-abunai-medium-r-normal--10-110-75-75-m-50-iso10646-1"
+LEMONBAR_FOREGROUND="#FFFAFAFA"
+LEMONBAR_BACKGROUND="#FF202028"
+LEMONBAR_FONT="-misc-ohsnap-medium-r-normal--11-79-100-100-c-60-iso8859-1"
 LEMONBAR_MONITORCOUNT=$(bspc query -M | wc -l)
 
 # Check if the lemonbar is running already
