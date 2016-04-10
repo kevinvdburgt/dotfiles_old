@@ -1,17 +1,29 @@
 #! /bin/sh
 
-sxhkd -f 100 &
+sxhkd &
 
-## Desktop computer at home
-# if [ "$(hostname)" == "blacklist" ]; then
-#
-# fi
-
-## Desktop computer at my internship
-#if [ "$(hostname)" == "charmander" ]; then
-#  xrandr --output HDMI-0 --off --output DVI-I-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-I-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-I-3 --off --output DVI-I-2 --off
-#  bspc monitor ^1 -s ^2
-#fi
+# Desktop computer at home
+if [ "$(hostname)" == "blacklist" ]; then
+  xrandr \
+    --output DVI-D-0 \
+    --mode 1920x1080 \
+    --pos 3000x0 \
+    --rotate right \
+    --output HDMI-0 \
+    --mode 1920x1080 \
+    --pos 1080x275 \
+    --rotate normal \
+    --output DVI-I-1 \
+    --mode 1920x1080 \
+    --pos 0x0 \
+    --rotate left \
+    --output DVI-I-0 \
+    --off \
+    --output DP-1 \
+    --off \
+    --output DP-0 \
+    --off
+fi
 
 ## Prepare and give some names to the virtual desktops
 C=0
@@ -58,3 +70,7 @@ bspc config focus_follows_pointer       true
 ## Launch scripts, applications and other stuff for bspwm
 #$HOME/.scripts/panel/panel &
 # $HOME/.config/bspwm/lemonbar.sh
+
+# Eyecandy, not realy essential, but looks awesome :)
+feh --bg-scale $HOME/.config/wallpaper.jpg &
+compton --config $HOME/.config/compton.conf &

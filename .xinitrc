@@ -23,8 +23,4 @@ pulseaudio --start &
 #mpdscribble &
 #modipy &
 
-## Eyecandy, not realy essentials, but looks awesome :)
-feh --bg-scale $HOME/.config/wallpaper.jpg &
-compton --config $HOME/.config/compton.conf &
-
 bspwm
