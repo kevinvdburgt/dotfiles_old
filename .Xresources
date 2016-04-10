@@ -34,25 +34,55 @@ URxvt*italicFont:       -lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1,
 URxvt*bolditalicFont:   -lucy-tewi-bold-r-normal--11-90-75-75-p-58-iso10646-1, \
                         -lucy-tewi2a-bold-r-normal--11-90-75-75-p-58-iso10646-1
 
-!-- Colors
-URxvt.foreground: #FAFAFA
-URxvt.background: #202028
-*color0:  #39394A
-*color8:  #535562
-*color1:  #C75646
-*color9:  #F87687
-*color2:  #8EB33B
-*color10: #CDEE69
-*color3:  #D0B03C
-*color11: #FFE377
-*color4:  #72B3CC
-*color12: #9CD9F0
-*color5:  #C8A0D1
-*color13: #FBB1F9
-*color6:  #218693
-*color14: #77DFD8
-*color7:  #B0B0B0
-*color15: #F9F9F9
+! Google Material Design
+
+*background 		: [70]#263238
+*foreground 		: #eceff1
+
+! black
+*color0  			: #263238
+*color8  			: #37474f
+! red
+*color1  			: #ff9800
+*color9  			: #ffa74d
+! green
+*color2  			: #8bc34a
+*color10 			: #9ccc65
+! yellow
+*color3  			: #ffc107
+*color11 			: #ffa000
+! blue
+*color4  			: #03a9f4
+*color12 			: #81d4fa
+! magenta
+*color5  			: #e91e63
+*color13 			: #ad1457
+! cyan
+*color6  			: #009688
+*color14 			: #26a69a
+! white
+*color7  			: #cfd8dc
+*color15 			: #eceff1
+
+!-- Colors (Old)
+!URxvt.foreground: #FAFAFA
+!URxvt.background: #202028
+!*color0:  #39394A
+!*color8:  #535562
+!*color1:  #C75646
+!*color9:  #F87687
+!*color2:  #8EB33B
+!*color10: #CDEE69
+!*color3:  #D0B03C
+!*color11: #FFE377
+!*color4:  #72B3CC
+!*color12: #9CD9F0
+!*color5:  #C8A0D1
+!*color13: #FBB1F9
+!*color6:  #218693
+!*color14: #77DFD8
+!*color7:  #B0B0B0
+!*color15: #F9F9F9
 
 !-- Colors (old)
 !URxvt.cursorColor: #dcdccc

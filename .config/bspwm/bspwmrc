@@ -1,5 +1,7 @@
 #! /bin/sh
 
+sxhkd -f 100 &
+
 ## Desktop computer at home
 # if [ "$(hostname)" == "blacklist" ]; then
 #
@@ -24,7 +26,7 @@ unset C
 
 ## Bspwm border and gaps
 bspc config border_width        0
-bspc config window_gap          0
+bspc config window_gap          5
 
 ## Bspwm behavior
 bspc config split_ratio         0.50
@@ -55,3 +57,4 @@ bspc config focus_follows_pointer       true
 
 ## Launch scripts, applications and other stuff for bspwm
 #$HOME/.scripts/panel/panel &
+# $HOME/.config/bspwm/lemonbar.sh

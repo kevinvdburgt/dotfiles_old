@@ -7,10 +7,10 @@ xset +fp $HOME/.fonts
 xset fp rehash
 
 ## X org settings
-xrdb -merge $HOME/.Xresources 
+xrdb -merge $HOME/.Xresources
 xsetroot -cursor_name left_ptr
-#wmname LG3D
-#numlockonx on
+wmname LG3D
+numlockx
 
 ## Keyboard setup
 setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl
@@ -27,6 +27,4 @@ pulseaudio --start &
 feh --bg-scale $HOME/.config/wallpaper.jpg &
 compton --config $HOME/.config/compton.conf &
 
-sxhkd -f 100 &
 bspwm
-
