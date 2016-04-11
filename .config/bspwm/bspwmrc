@@ -72,5 +72,5 @@ bspc config focus_follows_pointer       true
 # $HOME/.config/bspwm/lemonbar.sh
 
 # Eyecandy, not realy essential, but looks awesome :)
-feh --bg-scale $HOME/.config/wallpaper.jpg &
+feh --bg-fill $HOME/.config/wallpaper.jpg &
 compton --config $HOME/.config/compton.conf &
