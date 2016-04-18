@@ -17,6 +17,11 @@ URxvt.cursorBlink:      true
 URxvt.geometry:         80x20
 
 !--- URxvt fonts
+URxvt*font: xft:berry:size=8, \
+            xft:Kochi Gothic:antialias=false
+
+URxvt*boldFont:
+
 !URxvt.font: urxvt*font:       xft:Terminus:8
 !URxvt.font: -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso8859-1-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso8859-1
 !URxvt.font: -misc-ohsnap-medium-r-normal--11-79-100-100-c-60-iso8859-1
@@ -25,14 +30,14 @@ URxvt.geometry:         80x20
 !URxvt.italicFont: xft:Source Code Pro:medium:pixelsize=9
 !URxvt:*font: -*-ohsnap.icons-Medium-*-*-*-*-*-*-*-*-*-*-*
 
-URxvt*font:             -lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1, \
-                        -lucy-tewi2a-medium-r-normal--11-90-75-75-p-58-iso10646-1
-URxvt*boldFont:         -lucy-tewi-bold-r-normal--11-90-75-75-p-58-iso10646-1, \
-                        -lucy-tewi2a-bold-r-normal--11-90-75-75-p-58-iso10646-1
-URxvt*italicFont:       -lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1, \
-                        -lucy-tewi2a-medium-r-normal--11-90-75-75-p-58-iso10646-1
-URxvt*bolditalicFont:   -lucy-tewi-bold-r-normal--11-90-75-75-p-58-iso10646-1, \
-                        -lucy-tewi2a-bold-r-normal--11-90-75-75-p-58-iso10646-1
+!URxvt*font:             -lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1, \
+!                        -lucy-tewi2a-medium-r-normal--11-90-75-75-p-58-iso10646-1
+!URxvt*boldFont:         -lucy-tewi-bold-r-normal--11-90-75-75-p-58-iso10646-1, \
+!                        -lucy-tewi2a-bold-r-normal--11-90-75-75-p-58-iso10646-1
+!URxvt*italicFont:       -lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1, \
+!                        -lucy-tewi2a-medium-r-normal--11-90-75-75-p-58-iso10646-1
+!URxvt*bolditalicFont:   -lucy-tewi-bold-r-normal--11-90-75-75-p-58-iso10646-1, \
+!                        -lucy-tewi2a-bold-r-normal--11-90-75-75-p-58-iso10646-1
 
 ! -- Colors
 ! *background: rgba:0000/0000/0000/dddd
