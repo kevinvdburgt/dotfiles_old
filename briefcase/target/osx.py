@@ -1,6 +1,6 @@
 import os
 
-class System:
+class Target:
     def __init__(self, briefcase):
         # Install and update software packages from brew
         briefcase.shell('brew update')

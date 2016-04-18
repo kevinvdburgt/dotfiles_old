@@ -1,14 +1,32 @@
 #!/bin/bash
 
-# @TODO: Check if python3 is installed
+# Check if git and python3 are installed on the machine.
+pythonVersion=$(python -V 2>&1 | grep -Po '(?<=Python )(.+)')
+if [ -z "$pythonVersion" ]; then
+  echo "Python not installed"
+  exit 1
+else
+  pythonVersionParsed=$(echo "${pythonVersion//./}")
+  if [ "$pythonVersionParsed" -lt "300" ]; then
+    echo "Python version 3 is required, found version $pythonVersion"
+    exit 1
+  fi
+fi
 
-
-# Check if the .dotfiles folder already exists
-if [ -d "$HOME/.dotfiles" ]; then
-  echo "It seems that the folder $HOME/.dotfiles already exists on your system."
-  echo "Please rename, delete or move the .dotfiles folder and run this script again."
+if ! command -v git > /dev/null 2>&1; then
+  echo "Git is required."
   exit 1
 fi
 
+# Check if the .dotfiles folder already exists.
+if [ -d "$HOME/.dotfiles" ]; then
+  echo "It seems that the folder $HOME/.dotfiles already exists on your system."
+  echo "Please rename or remove the .dotfiles folder and run this script again."
+  exit 1
+fi
+
+# Clone the repository
 git clone https://github.com/kevinvdburgt/dotfiles.git $HOME/.dotfiles
-$HOME/.dotfiles/briefcase/sync
+
+# Run the update script
+$HOME/.dotfiles/briefcase/update
