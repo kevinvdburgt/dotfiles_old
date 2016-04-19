@@ -36,26 +36,28 @@ done
 unset C
 
 ## Bspwm border and gaps
-bspc config border_width        0
-bspc config window_gap          5
+bspc config border_width        4
+bspc config window_gap          2
 
 ## Bspwm behavior
-bspc config split_ratio         0.50
+bspc config split_ratio         0.52
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 bspc config focus_by_distance   true
+bspc config history_aware_focus  true
 
 ## Bspwm window border colors
 bspc config focused_border_color        "#202028"
 bspc config normal_border_color         "#202028"
+bspc config urgent_border_color         "#F9F9F9"
 bspc config active_border_color         "#202028"
 
 bspc config focused_locked_border_color "#00C7D8"
 bspc config normal_locked_border_color  "#708D8F"
 bspc config active_locked_border_color  "#808C8D"
 
-bspc config urgent_border_color         "#FF0000"
 bspc config presel_border_color         "#FF0000"
+
 
 ## Cursor settings, i like focus following the pointer :-)
 bspc config focus_follows_pointer       true

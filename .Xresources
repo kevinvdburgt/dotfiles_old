@@ -1,4 +1,6 @@
-!-- Xft (Anti aliased fonts)
+!------------------------------
+! XFT settings
+!------------------------------
 Xft.dpi:                96
 Xft.antialias:          true
 Xft.rgba:               rgb
@@ -7,7 +9,9 @@ Xft.autohint:           false
 Xft.hintstyle:          hintslight
 Xft.lcdfilter:          lcddefault
 
-!-- URxvt (rxvt unicode terminal emulator)
+!------------------------------
+! URxvt settings
+!------------------------------
 URxvt.scrollBar:        false
 URxvt.saveLines:        10000
 URxvt.cursorUnderline:  false
@@ -16,109 +20,15 @@ URxvt.depth:            32
 URxvt.cursorBlink:      true
 URxvt.geometry:         80x20
 
-!--- URxvt fonts
+!------------------------------
+! URxvt fonts
+!------------------------------
 URxvt*font: xft:berry:size=8, \
             xft:Kochi Gothic:antialias=false
 
 URxvt*boldFont:
 
-!URxvt.font: urxvt*font:       xft:Terminus:8
-!URxvt.font: -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso8859-1-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso8859-1
-!URxvt.font: -misc-ohsnap-medium-r-normal--11-79-100-100-c-60-iso8859-1
-!URxvt.font: xft:Source Code Pro:medium:pixelsize=9
-!URxvt.boldFont: xft:Source Code Pro:medium:pixelsize=9
-!URxvt.italicFont: xft:Source Code Pro:medium:pixelsize=9
-!URxvt:*font: -*-ohsnap.icons-Medium-*-*-*-*-*-*-*-*-*-*-*
-
-!URxvt*font:             -lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1, \
-!                        -lucy-tewi2a-medium-r-normal--11-90-75-75-p-58-iso10646-1
-!URxvt*boldFont:         -lucy-tewi-bold-r-normal--11-90-75-75-p-58-iso10646-1, \
-!                        -lucy-tewi2a-bold-r-normal--11-90-75-75-p-58-iso10646-1
-!URxvt*italicFont:       -lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1, \
-!                        -lucy-tewi2a-medium-r-normal--11-90-75-75-p-58-iso10646-1
-!URxvt*bolditalicFont:   -lucy-tewi-bold-r-normal--11-90-75-75-p-58-iso10646-1, \
-!                        -lucy-tewi2a-bold-r-normal--11-90-75-75-p-58-iso10646-1
-
-! -- Colors
-! *background: rgba:0000/0000/0000/dddd
-*cursorColor:   #cee318
-*background:    [85]#1C1C1C
-*foreground:    #FEFEFE
-*color0:        #1C1C1C
-*color8:        #666666
-*color1:        #ff005b
-*color9:        #ff00a0
-*color2:        #cee318
-*color10:       #ccff00
-*color3:        #ffe755
-*color11:       #ff9f00
-*color4:        #048ac7
-*color12:       #48c6ff
-*color5:        #833c9f
-*color13:       #be67e1
-*color6:        #0ac1cd
-*color14:       #63e7f0
-*color7:        #e5e5e5
-*color15:       #f3f3f3
-
-!-- Colors (Old)
-!URxvt.foreground: #FAFAFA
-!URxvt.background: #202028
-!*color0:  #39394A
-!*color8:  #535562
-!*color1:  #C75646
-!*color9:  #F87687
-!*color2:  #8EB33B
-!*color10: #CDEE69
-!*color3:  #D0B03C
-!*color11: #FFE377
-!*color4:  #72B3CC
-!*color12: #9CD9F0
-!*color5:  #C8A0D1
-!*color13: #FBB1F9
-!*color6:  #218693
-!*color14: #77DFD8
-!*color7:  #B0B0B0
-!*color15: #F9F9F9
-
-!-- Colors (old)
-!URxvt.cursorColor: #dcdccc
-!URxvt*foreground: #e6e6e6
-!URxvt*background: #1c2027
-!*color0:  #0d1926
-!*color8:  #585858
-!*color1:  #c0392b
-!*color9:  #e74c3c
-!*color2:  #3aaf75
-!*color10: #72d5a3
-!*color3:  #ffaa3e
-!*color11: #efdd6f
-!*color4:  #2980b9
-!*color12: #3498db
-!*color5:  #8e44ad
-!*color13: #9b59b6
-!*color6:  #00afff
-!*color14: #4DC5DC
-!*color7:  #b3b3b3
-!*color15: #e6e6e6
-
-!-- Colors (old)
-!URxvt.cursorColor: #00FF00
-!URxvt.foreground: #FFFFFF
-!URxvt.background: [70]#000000
-!*color0: #4E4E4E
-!*color8: #7D7D7D
-!*color1: #ff4070
-!*color9: #ff6699
-!*color2: #d5f85f
-!*color10: #99ff66
-!*color3: #ffa466
-!*color11: #faff66
-!*color4: #00A1E4
-!*color12: #00B4FF
-!*color5: #7d66ff
-!*color13: #a982ff
-!*color6: #00CCFF
-!*color14: #26DED2
-!*color7: #D6D6D6
-!*color15: #F0F0F0
+!------------------------------
+! Color scheme
+!------------------------------
+#include "./.colors/barrage"

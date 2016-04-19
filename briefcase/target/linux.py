@@ -4,10 +4,10 @@ class Target:
     def __init__(self, briefcase):
 
         # Install new packages from pacman
-        briefcase.shell('sudo pacman -Syu')
+        # briefcase.shell('sudo pacman -Syu')
 
         # Install new packages from yaourt
-        briefcase.shell('yaourt -Syua')
+        # briefcase.shell('yaourt -Syua')
 
         # Symlink dotfiles
         briefcase.symlink('~/.dotfiles/.Xresources',            '~/.Xresources')
@@ -25,6 +25,7 @@ class Target:
 
         briefcase.symlink('~/.dotfiles/.scripts',               '~/.scripts')
         briefcase.symlink('~/.dotfiles/.fonts',                 '~/.fonts')
+        briefcase.symlink('~/.dotfiles/.colors',                '~/.colors')
 
         briefcase.symlink('~/.dotfiles/.atom/config.cson',      '~/.atom/config.cson')
 
@@ -37,6 +38,9 @@ class Target:
 
         briefcase.gitsource('https://github.com/LemonBoy/bar.git', 'lemonbar',
             'make && cp -u lemonbar $HOME/.bin')
+
+        briefcase.gitsource('https://github.com/krypt-n/bar.git', 'lemonbar-xft',
+            'make && cp -u lemonbar $HOME/.bin/lemonbar-xft')
 
         briefcase.gitsource('https://github.com/baskerville/xtitle.git', 'xtitle',
             'make && cp -u xtitle $HOME/.bin')
