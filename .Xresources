@@ -31,4 +31,4 @@ URxvt*boldFont:
 !------------------------------
 ! Color scheme
 !------------------------------
-#include "./.colors/barrage"
+#include "./.colors/smear"
