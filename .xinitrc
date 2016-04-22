@@ -3,7 +3,11 @@
 ## Load all fonts
 xset +fp /usr/share/fonts/local
 xset +fp /usr/share/fonts/misc
-xset +fp $HOME/.fonts
+xset +fp $HOME/.fonts/misc
+xset +fp $HOME/.fonts/lemon
+xset +fp $HOME/.fonts/tewi
+xset +fp $HOME/.fonts/ohsnap
+xset +fp $HOME/.fonts/terminesspowerline
 xset fp rehash
 
 ## X org settings
