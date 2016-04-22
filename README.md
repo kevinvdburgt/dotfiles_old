@@ -28,4 +28,4 @@ curl https://raw.githubusercontent.com/kevinvdburgt/dotfiles/master/briefcase/in
 
 ### Screenshots
 __Wallpaper__
-![Wallpaper](https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-14906.jpg)
+![Wallpaper](https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-21915.jpg)
