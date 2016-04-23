@@ -15,6 +15,17 @@ while read -r line; do
       XTI="${line#???}"
       ;;
 
+    MPD*) # Music Player Daemon
+      MPD_ARR=(${line#???})
+      if [ -z "${line#???}" ]; then
+        MPD="none"
+      elif [ "${MPD_ARR[0]}" == "error:" ]; then
+        MPD="MPD Not running"
+      else
+        MPD="${line#???}"
+      fi
+      ;;
+
     W*) # Workspaces
       WSP=("" "" "")
       WSPT=("%{F${COLOR_BACKGROUND} B${COLOR_WSP_INACTIVE}} [ ] %{F- B-}%{F- B-}%{F${COLOR_WSP_INACTIVE} B${COLOR_BACKGROUND}}${SEP_RIGHT}%{F- B-}" "%{F${COLOR_BACKGROUND} B${COLOR_WSP_INACTIVE}} [ ] %{F- B-}%{F- B-}%{F${COLOR_WSP_INACTIVE} B${COLOR_BACKGROUND}}${SEP_RIGHT}%{F- B-}" "%{F${COLOR_BACKGROUND} B${COLOR_WSP_INACTIVE}} [ ] %{F- B-}%{F- B-}%{F${COLOR_WSP_INACTIVE} B${COLOR_BACKGROUND}}${SEP_RIGHT}%{F- B-}")
@@ -29,7 +40,7 @@ while read -r line; do
         case $ITEM in
           [Mm]*) # Current monitor
             CM="${NAME}"
-            WSP[CM]="%{T2 F${COLOR_BACKGROUND} B${COLOR_WSP_INACTIVE}} ${ICON_WSP} %{T- F- B-}"
+            WSP[CM]="%{T2 F${COLOR_BACKGROUND} B${COLOR_WSP_INACTIVE}} ${ICON_ARCH} %{T- F- B-}"
             ;;
 
           O*|F*|U*) # Focussed occupied desktop, Focussed free desktop, Focussed urgent desktop
@@ -67,8 +78,8 @@ while read -r line; do
 
     # Screen 2, right
     printf "%s" "%{S1}%{r}"
-    printf "%s" "[+] "
-    printf "%s" "CPU: 34% ${SEP_L_LEFT} RAM: 23% "
+    printf "%s" "${ICON_MUSIC} ${MPD} "
+    # printf "%s" "${ICON_RAM} 34% ${SEP_L_LEFT} RAM: 23% "
     printf "%s" "%{F${COLOR_BLUE}}${SEP_LEFT}%{F${COLOR_BACKGROUND} B${COLOR_BLUE}} ${DAT} %{F- B-}"
     printf "%s" "%{F${COLOR_BLUE_DARKER} B${COLOR_BLUE}}${SEP_LEFT}%{F${COLOR_FOREGROUND} B${COLOR_BLUE_DARKER}} %{A:lock:}${ICON_LOCK}%{A} %{F- B-}"
     # printf "%s" " %{A:lock:}[LOCK]%{A} "

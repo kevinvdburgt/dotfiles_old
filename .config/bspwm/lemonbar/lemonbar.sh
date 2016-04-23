@@ -24,6 +24,7 @@ bspc config top_padding "${GEOMETRY}"
 # Event registration and binding
 while true; do
   printf "%s%s\n" "DAT" "$(date +'%d-%m-%y %H:%M:%S')" > "${PANEL_FIFO}"
+  printf "%s%s\n" "MPD" "$(mpc current)" > "${PANEL_FIFO}"
   sleep 1s
 done &
 

@@ -22,6 +22,7 @@ class Target:
         briefcase.symlink('~/.dotfiles/.config/sxhkd',          '~/.config/sxhkd')
         briefcase.symlink('~/.dotfiles/.config/gtk-3.0',        '~/.config/gtk-3.0')
         briefcase.symlink('~/.dotfiles/.config/compton.conf',   '~/.config/compton.conf')
+        briefcase.symlink('~/.dotfiles/.config/mpd.conf',       '~/.config/mpd.conf')
 
         briefcase.symlink('~/.dotfiles/.scripts',               '~/.scripts')
         briefcase.symlink('~/.dotfiles/.fonts',                 '~/.fonts')

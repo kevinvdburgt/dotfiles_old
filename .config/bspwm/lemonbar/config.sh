@@ -46,6 +46,10 @@ SEP_L_RIGHT=""                     # Powerline light sepatator right
 # Icon glyphs from Siji
 ICON_POWER=""
 ICON_LOCK=""
+ICON_CPU=""
+ICON_RAM=""
+ICON_ARCH=""
+ICON_MUSIC=""
 
 COLOR_BACK="#FF1D1F21"              # Default background
 COLOR_FORE="#FFC5C8C6"              # Default foreground
