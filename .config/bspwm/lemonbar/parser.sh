@@ -7,12 +7,17 @@ source $(dirname $0)/config.sh
 
 while read -r line; do
   case $line in
-    DAT*)
+    DAT*) # Date and time
       DAT="${line#???}"
       ;;
 
-    W*)
-      WMI=("" "" "")
+    XTI*) # xtitle
+      XTI="${line#???}"
+      ;;
+
+    W*) # Workspaces
+      WSP=("" "" "")
+      WSPT=("%{F${COLOR_BACKGROUND} B${COLOR_WSP_INACTIVE}} [ ] %{F- B-}%{F- B-}%{F${COLOR_WSP_INACTIVE} B${COLOR_BACKGROUND}}${SEP_RIGHT}%{F- B-}" "%{F${COLOR_BACKGROUND} B${COLOR_WSP_INACTIVE}} [ ] %{F- B-}%{F- B-}%{F${COLOR_WSP_INACTIVE} B${COLOR_BACKGROUND}}${SEP_RIGHT}%{F- B-}" "%{F${COLOR_BACKGROUND} B${COLOR_WSP_INACTIVE}} [ ] %{F- B-}%{F- B-}%{F${COLOR_WSP_INACTIVE} B${COLOR_BACKGROUND}}${SEP_RIGHT}%{F- B-}")
       CM=0
       MSG=${line#?}
 
@@ -24,18 +29,19 @@ while read -r line; do
         case $ITEM in
           [Mm]*) # Current monitor
             CM="${NAME}"
+            WSP[CM]="%{T2 F${COLOR_BACKGROUND} B${COLOR_WSP_INACTIVE}} ${ICON_WSP} %{T- F- B-}"
             ;;
 
           O*|F*|U*) # Focussed occupied desktop, Focussed free desktop, Focussed urgent desktop
-            # WMI[CM]="${WMI[CM]}%{F${COLOR_BLUE} B${COLOR_BLUE_DARKER}}${SEP_RIGHT}%{F${COLOR_BACKGROUND} B${COLOR_BLUE_DARKER}} ${NAME} %{F${COLOR_BLUE_DARKER} B${COLOR_BLUE}}"
-            # wsp="${wsp}%{F${color_head} B${color_wsp}}${sep_right}%{F${color_back} B${color_wsp} T1} ${1#???} %{F${color_wsp} B${color_head}}${sep_right}"
-            # time="%{F${color_head}}${sep_left}%{F${color_back} B${color_head}} ${sys_arr[3]} %{F- B-}"
-            WMI[CM]="${WMI[CM]}%{+u} ${NAME} %{-u}"
+            WSP[CM]="${WSP[CM]}%{F${COLOR_WSP_INACTIVE} B${COLOR_WSP_ACTIVE}}${SEP_RIGHT}%{F- B-}%{F${COLOR_BACKGROUND} B${COLOR_WSP_ACTIVE}} ${NAME} %{F- B-}%{F${COLOR_WSP_ACTIVE} B${COLOR_WSP_INACTIVE}}${SEP_RIGHT}%{F- B-}"
             ;;
 
           o*|f*|u*) # Occupied desktop, Free desktop, Urgent desktop
-            # WMI[CM]="${WMI[CM]}%{F${COLOR_BLUE} B${COLOR_BLUE_DARKER}}${SEP_RIGHT}%{F${COLOR_BACKGROUND} B${COLOR_BLUE_LIGHTER}} ${NAME} %{F${COLOR_BLUE_DARKER} B${COLOR_BLUE}}"
-            WMI[CM]="${WMI[CM]} ${NAME} "
+            WSP[CM]="${WSP[CM]}%{F${COLOR_BACKGROUND} B${COLOR_WSP_INACTIVE}}  ${NAME}  %{F- B-}"
+            ;;
+
+          T*) # Tiling mode
+            WSPT[CM]="%{F${COLOR_BACKGROUND} B${COLOR_WSP_INACTIVE}} [$NAME] %{F- B-}%{F- B-}%{F${COLOR_WSP_INACTIVE} B${COLOR_BACKGROUND}}${SEP_RIGHT}%{F- B-}"
             ;;
         esac
         shift
@@ -49,7 +55,7 @@ while read -r line; do
   elif [ $MONITORS -eq 3 ]; then
     # Screen 1, left
     printf "%s" "%{S0}%{l}"
-    printf "%s" "${WMI[0]}"
+    printf "%s" "${WSP[0]}${WSPT[0]}"
 
     # Screen 1, right
     printf "%s" "%{S0}%{r}"
@@ -57,15 +63,19 @@ while read -r line; do
 
     # Screen 2, left
     printf "%s" "%{S1}%{l}"
-    printf "%s" "${WMI[1]}"
+    printf "%s" "${WSP[1]}${WSPT[1]} ${XTI}"
 
     # Screen 2, right
     printf "%s" "%{S1}%{r}"
+    printf "%s" "[+] "
+    printf "%s" "CPU: 34% ${SEP_L_LEFT} RAM: 23% "
     printf "%s" "%{F${COLOR_BLUE}}${SEP_LEFT}%{F${COLOR_BACKGROUND} B${COLOR_BLUE}} ${DAT} %{F- B-}"
+    printf "%s" "%{F${COLOR_BLUE_DARKER} B${COLOR_BLUE}}${SEP_LEFT}%{F${COLOR_FOREGROUND} B${COLOR_BLUE_DARKER}} %{A:lock:}${ICON_LOCK}%{A} %{F- B-}"
+    # printf "%s" " %{A:lock:}[LOCK]%{A} "
 
     # Screen 3, left
     printf "%s" "%{S2}%{l}"
-    printf "%s" "${WMI[2]}"
+    printf "%s" "${WSP[2]}${WSPT[2]}"
 
     # Screen 3, right
     printf "%s" "%{S2}%{r}"

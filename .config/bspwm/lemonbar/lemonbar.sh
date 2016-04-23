@@ -28,6 +28,7 @@ while true; do
 done &
 
 bspc subscribe report > "${PANEL_FIFO}" &
+xtitle -sf 'XTI%s' > "${PANEL_FIFO}" &
 
 # Run the bar, pipe the fifo through the lemonbar parser and then pipe it into
 # the lemonbar.
@@ -37,6 +38,7 @@ cat "${PANEL_FIFO}" | $(dirname $0)/parser.sh | lemonbar \
   -f "${ICONFONT}" \
   -g "x${GEOMETRY}" \
   -B "${COLOR_BACKGROUND}" \
-  -F "${COLOR_FOREGROUND}" &
+  -F "${COLOR_FOREGROUND}" \
+  | $(dirname $0)/execute.sh &
 
 wait

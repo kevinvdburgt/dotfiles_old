@@ -23,7 +23,7 @@ class Target:
         settings_wallpaper_remote_url = briefcase.get('settings', 'wallpaper', 'remote_url')
         localset_wallpaper_remote_url = briefcase.get('localset', 'wallpaper', 'remote_url')
         if settings_wallpaper_remote_url != localset_wallpaper_remote_url:
-            briefcase.shell('curl ' + settings_wallpaper_remote_url + ' -o wallpaper.jpg', True, '~/.config/');
-            briefcase.shell('osascript -e \'tell application "Finder" to set desktop picture to POSIX file "' + os.path.expanduser('~/.config/wallpaper.jpg') + '"\'')
+            briefcase.shell('curl ' + settings_wallpaper_remote_url + ' -o wallpaper.png', True, '~/.config/');
+            briefcase.shell('osascript -e \'tell application "Finder" to set desktop picture to POSIX file "' + os.path.expanduser('~/.config/wallpaper.png') + '"\'')
             briefcase.shell('killall Dock')
             briefcase.set('localset', 'wallpaper', 'remote_url', settings_wallpaper_remote_url)
