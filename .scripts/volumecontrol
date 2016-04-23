@@ -1,49 +1,107 @@
 #!/bin/bash
+#
+# Because i use multiple audio interfaces i use this script as a 'gateway'
 
-PREFERED_CARD="G930"
-VOLUME_STEPS=2
 
-case $1 in
-  # Increase the volume
-  increase)
-    if ponymix list-cards | grep $PREFERED_CARD; then
-      ponymix -d $PREFERED_CARD increase $VOLUME_STEPS
-    else
-      ponymix increase $VOLUME_STEPS
-    fi
-    ;;
 
-  # Decrease the volume
-  decrease)
-    if ponymix list-cards | grep $PREFERED_CARD; then
-      ponymix -d $PREFERED_CARD decrease $VOLUME_STEPS
-    else
-      ponymix decrease $VOLUME_STEPS
-    fi
-    ;;
+# [ ! -d "$HOME/.tmp" ] && mkdir "$HOME/.tmp"
+# if [ -f "$HOME/.tmp/volumecontrol-card" ]; then
+#   CARD=$(cat "$HOME/.tmp/volumecontrol-card")
+# else
+#   ponymix list-cards | sed -n 1p > "$HOME/.tmp/volumecontrol-card"
+#   CARD=$(cat "$HOME/.tmp/volumecontrol-card")
+# fi
+#
+# STEPS=2
+#
+# case $1 in
+#   increase|i) # Increase the volume
+#     printf "%s\n" ""
+#     ;;
+#
+#   decrease|d) # Decrease the volume
+#     printf "%s\n" ""
+#     ;;
+#
+#   toggle|t) # Toggle mute
+#     printf "%s\n" ""
+#     ;;
+#
+#   set|s) # Set the volume
+#     printf "%s\n" ""
+#     ;;
+#
+#   get|g) # Get the volume
+#     printf "%s\n" ""
+#     ;;
+#
+#   card|c) # Set a audio interface
+#     if ponymix list-cards | grep "$2"; then
+#       CARD=$(ponymix list-cards | sed -n 1p)
+#     else
+#       CARD=$(ponymix list-cards | grep "$2")
+#     fi
+#     echo "${CARD}" > "$HOME/.tmp/volumecontrol-card"
+#     ;;
+#
+#   *) # Display the usage script
+#     printf "%s\n" "Usage: $0 [OPTION] [VALUE]"
+#     printf "%s\n" "  i, increase          Increase the volume with ${STEPS}%"
+#     printf "%s\n" "  d, decrease          Decrease the volume with ${STEPS}%"
+#     printf "%s\n" "  t, toggle            Toggle the mute"
+#     printf "%s\n" "  g, get               Get the audio volume"
+#     printf "%s\n" "  s, set [volume]      Set the audio volume"
+#     printf "%s\n" "  c, card [cardname]   Sets the audiocard interface"
+#     ;;
+# esac
 
-  # Toggle volume
-  toggle)
-    if ponymix list-cards | grep $PREFERED_CARD; then
-      ponymix -d $PREFERED_CARD toggle
-    else
-      ponymix toggle
-    fi
-    ;;
 
-  # Get the current volume
-  get)
-    if ponymix list-cards | grep $PREFERED_CARD; then
-      ponymix -d $PREFERED_CARD get-volume
-    else
-      ponymix get-volume
-    fi
-    ;;
 
-  # Display the usage
-  *)
-    echo "Usage: $0 {increase|decrease|toggle|get}"
-    exit 1
-    ;;
-esac
-
+#
+#
+# PREFERED_CARD="G930"
+# VOLUME_STEPS=2
+#
+# case $1 in
+#   # Increase the volume
+#   increase)
+#     if ponymix list-cards | grep $PREFERED_CARD; then
+#       ponymix -d $PREFERED_CARD increase $VOLUME_STEPS
+#     else
+#       ponymix increase $VOLUME_STEPS
+#     fi
+#     ;;
+#
+#   # Decrease the volume
+#   decrease)
+#     if ponymix list-cards | grep $PREFERED_CARD; then
+#       ponymix -d $PREFERED_CARD decrease $VOLUME_STEPS
+#     else
+#       ponymix decrease $VOLUME_STEPS
+#     fi
+#     ;;
+#
+#   # Toggle volume
+#   toggle)
+#     if ponymix list-cards | grep $PREFERED_CARD; then
+#       ponymix -d $PREFERED_CARD toggle
+#     else
+#       ponymix toggle
+#     fi
+#     ;;
+#
+#   # Get the current volume
+#   get)
+#     if ponymix list-cards | grep $PREFERED_CARD; then
+#       ponymix -d $PREFERED_CARD get-volume
+#     else
+#       ponymix get-volume
+#     fi
+#     ;;
+#
+#   # Display the usage
+#   *)
+#     echo "Usage: $0 {increase|decrease|toggle|get}"
+#     exit 1
+#     ;;
+# esac
