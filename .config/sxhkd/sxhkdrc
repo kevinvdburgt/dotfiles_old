@@ -14,6 +14,11 @@ super + d
 super + shift + d
   rofi -show window
 
+
+# Password menu 2
+super + shift + p
+  passmenu2
+
 # Take screenshot of all screens
 alt + shift + 1
     uploadscrot all

@@ -29,7 +29,6 @@ URxvt.geometry:         80x20
 URxvt*font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
 URxvt*boldFont:
 
-
 !------------------------------
 ! Color scheme
 !------------------------------
