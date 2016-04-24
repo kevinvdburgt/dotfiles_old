@@ -7,6 +7,6 @@ source $(dirname $0)/config.sh
 
 while read -r line; do
   case $line in
-    lock) i3lock ;;
+    lock) bspwmlock ;;
   esac
 done

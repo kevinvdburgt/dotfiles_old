@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Locks the BSPWM windowmanager with i3lock
+[ -f /tmp/lockbg.png ] && exit 1
 scrot /tmp/lockbg.png -e 'convert -blur 0x8 $f /tmp/lockbg.png'
 convert -gravity center -composite /tmp/lockbg.png $HOME/.dotfiles/meta/archlinux.png /tmp/lockbg.png
 i3lock -u -i /tmp/lockbg.png
