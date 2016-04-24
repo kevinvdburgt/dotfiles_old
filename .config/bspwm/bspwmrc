@@ -43,9 +43,12 @@ bspc config urgent_border_color   "#FFFF00"
 bspc config presel_feedback_color "#1e1e1e"
 
 # BSPWM workspaces
+i=0
 for monitor in $(bspc query -M); do
-  bspc monitor $monitor -d "One" "Two" "Three"
+  bspc monitor $monitor -n "${i}" -d "One" "Two" "Three"
+  let i++
 done
+unset i
 
 # BSPWM rules
 #bspc rule -a Gimp desktop=^8 follow=on floating=on
