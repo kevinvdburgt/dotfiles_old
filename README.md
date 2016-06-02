@@ -1,31 +1,16 @@
-# Dotfiles - My Treasure Box
+# Dotfiles
+My personal dotfiles repository for OSX
 
-### Introduction
-The public repository for my personal dotfiles. I'm planning to keep these dotfiles as up-to-date as possible across my multiple machines.
+__Warning:__ If you want to give these dotfiles a try, you should first fork this
+repository, review the code, and remove things you don’t want or need. Don’t blindly
+use my settings unless you know what that entails. Use at your own risk!
 
-### Installation
-Keep in mind that these dotfiles and scripts are primarily written for [ArchLinux](https://archlinux.org/) so it probably wont work as expected on other Linux distributions.
+## Installation
 
-Before running the install script make sure you have installed the following packages: `git` and `python3`
-
-To install the dotfiles, simply run:
 ```
-curl https://raw.githubusercontent.com/kevinvdburgt/dotfiles/master/briefcase/install | sh
+curl --silent https://raw.githubusercontent.com/kevinvdburgt/dotfiles/master/briefcase/install | sh
 ```
 
-### Applications
-- __window manager__: [bspwm](https://wiki.archlinux.org/index.php/Bspwm)
-
-### Folder structure
-`.config/` This folder contains all configuration files for the applications i have installed on my machines.
-
-`.fonts/` This folder contains all additional fonts used on my machines.
-
-`.scripts/` This folder contains a lot of usefull scripts and utilities i often use.
-
-`briefcase/` This folder contains a little Python application which keeps my dotfiles in sync across different machines.
-
-
-### Screenshots
+## Screenshots
 __Wallpaper__
-![Wallpaper](https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-287774.jpg)
+![Wallpaper](https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-69302.jpg)
