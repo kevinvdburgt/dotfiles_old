@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# Download new dotfiles
-cd $HOME/.dotfiles
-git pull
-
-# Run the briefcase sync
-$HOME/.dotfiles/briefcase/sync
