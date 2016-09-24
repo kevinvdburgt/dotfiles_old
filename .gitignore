@@ -1,0 +1,3 @@
+briefcase/config.ini
+briefcase/backup/*
+!briefcase/backup/README.md
