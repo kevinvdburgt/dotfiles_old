@@ -4,7 +4,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 
-  background-image: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-212810.jpg);
+  background-image: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-436216.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -48,6 +48,7 @@ nav.bookmarks ul a {
   color: #EFF1F5;
   text-decoration: none;
   font-weight: 300;
+  white-space: nowrap;
 
   line-height: 30px;
   padding: 0 10px;
