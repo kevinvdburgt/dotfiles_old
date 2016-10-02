@@ -3,6 +3,12 @@ body {
   color: #EFF1F5;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+
+  background-image: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-212810.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 /**
@@ -27,6 +33,14 @@ nav.bookmarks ul li {
   float: left;
   margin: 0;
   padding: 0;
+}
+
+nav.bookmarks ul li li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 nav.bookmarks ul a {

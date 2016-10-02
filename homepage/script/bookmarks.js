@@ -3,6 +3,37 @@ if (!bookmarks) {
     {
       'title': 'You can create your own bookmars, click here to learn more!',
       'href': 'https://github.com/kevinvdburgt/dotfiles/homepage',
+    },
+    {
+      'title': 'Example',
+      'href': '#',
+      'sub': [
+        {
+          'title': 'Item',
+          'href': '#',
+        },
+
+        {
+          'title': 'Sub Itemz',
+          'href': '#',
+          'sub': [
+            {
+              'title': 'Hello',
+              'href': '#',
+            },
+            {
+              'title': 'World',
+              'href': '#',
+              'sub': [
+                {
+                  'title': 'Infinite sub menus',
+                  'href': '#'
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ];
 }
