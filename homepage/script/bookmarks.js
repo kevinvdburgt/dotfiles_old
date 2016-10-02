@@ -2,7 +2,7 @@ if (!bookmarks) {
   var bookmarks = [
     {
       'title': 'You can create your own bookmars, click here to learn more!',
-      'href': 'https://github.com/kevinvdburgt/dotfiles/homepage',
+      'href': 'https://github.com/kevinvdburgt/dotfiles/tree/master/homepage',
     },
     {
       'title': 'Example',
