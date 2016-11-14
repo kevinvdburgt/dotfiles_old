@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from lib.briefcase import Briefcase
 
+Briefcase.link("~/.dotfiles/.scripts", "~/.scripts")
 
 
 # Briefcase.shell("ls", False, "~/.ssh")
