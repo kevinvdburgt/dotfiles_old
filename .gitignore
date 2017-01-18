@@ -1,4 +1,1 @@
-briefcase/**/__pycache__
-briefcase/config.ini
-briefcase/backup/*
-!briefcase/backup/README.md
+.DS_Store
