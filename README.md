@@ -14,10 +14,10 @@ wget -qO- https://raw.githubusercontent.com/kevinvdburgt/dotfiles/master/briefca
 ```
 
 ## Current machines
-- MacBook Pro 15" (running macOS 10.12.2 Sierra)
-- ThinkPad L460 (running ArchLinux)
-- Personal Server (running Debian Testing)
-- Home Server (running Debian Testing)
+- MacBook Pro 15" `chemistry` (running macOS 10.12.2 Sierra)
+- ThinkPad L460 `xenon` (running ArchLinux)
+- Personal Server `ika` (running Debian Testing)
+- Home Server `burgt` (running Debian Testing)
 
 ## Folder structure
 `briefcase/` This folder contains a dotfile sync script i've written over time for multiple platforms.
