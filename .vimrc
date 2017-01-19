@@ -10,6 +10,7 @@ call vundle#begin()
 " Plugins
 "
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
