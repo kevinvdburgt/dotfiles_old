@@ -12,7 +12,7 @@ call vundle#begin()
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'valloric/youcompleteme'
 Plugin 'editorconfig/editorconfig-vim'
