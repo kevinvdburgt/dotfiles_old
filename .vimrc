@@ -15,6 +15,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'valloric/youcompleteme'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ryanoasis/vim-devicons'
 
 "
 " Color schemes
@@ -83,8 +84,17 @@ noremap <Right> <NOP>
 " Plugin: NERDTree
 "
 map <C-n> :NERDTreeToggle<CR>
+
+" Display chars
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
+" Automatically open NERDTree when just running 'vim' in a folder
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Close vim when the only window left op en is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "
 " Plugin: airline
