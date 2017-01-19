@@ -73,6 +73,12 @@ set ignorecase			" Ignore case of search results
 "nnoremap j gj
 "nnoremap k gk
 
+" Habit breaking, disable arrow keys for moving around in vim
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 "
 " Plugin: NERDTree
 "
