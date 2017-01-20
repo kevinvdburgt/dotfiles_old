@@ -1,0 +1,8 @@
+"*":
+  core:
+    telemetryConsent: "no"
+    warnOnLargeFileLimit: 2
+  editor:
+    fontFamily: "UbuntuMono Nerd Font"
+  "exception-reporting":
+    userId: "0513bbc7-f3b2-f996-5d61-201444faa83c"
