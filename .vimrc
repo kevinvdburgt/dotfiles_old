@@ -16,7 +16,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'valloric/youcompleteme'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ryanoasis/vim-devicons'
+"Plugin 'ryanoasis/vim-devicons'
+Plugin 'tpope/vim-surround'
 
 "
 " Color schemes
@@ -29,8 +30,9 @@ call vundle#end()
 "
 " Colors
 "
+set termguicolors
 colorscheme molokai		" Awesome colorscheme
-let g:molokai_original = 1	" - Use the original colorscheme
+let g:molokai_original = 0	" - Use the original colorscheme
 let g:rehash265 = 1		" - Not sure what this did tho..?
 
 syntax enable			" Enable syntax highlighting
