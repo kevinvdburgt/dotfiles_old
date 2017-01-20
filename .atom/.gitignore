@@ -5,3 +5,6 @@ storage
 .apm
 .node-gyp
 .npm
+packages/*
+!packages/README.md
+!packages/package-list.txt
