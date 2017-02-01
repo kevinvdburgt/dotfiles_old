@@ -1,2 +1,11 @@
+docblockr@0.9.1
 editorconfig@2.2.0
+file-icons@2.0.13
+language-blade@0.27.1
+monokai-seti@0.7.0
+nebula-syntax@0.4.1
+nebula-ui@0.5.1
+no-title-bar@0.2.2
+seti-ui@1.4.0
+vim-mode-plus@0.82.0
 
