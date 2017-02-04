@@ -16,7 +16,7 @@ wget -qO- https://raw.githubusercontent.com/kevinvdburgt/dotfiles/master/briefca
 ## Current machines
 - MacBook Pro 15" `chemistry` (running macOS 10.12.2 Sierra)
 - ThinkPad L460 `xenon` (running ArchLinux)
-- Personal Server `ika` (running Debian Testing)
+- Personal Server `nitrogen` (running Debian Testing)
 - Home Server `burgt` (running Debian Testing)
 
 ## Folder structure
