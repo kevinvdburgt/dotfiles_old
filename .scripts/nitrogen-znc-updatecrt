@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Updating ZNC certificate..."
+
+sudo cat \
+  /etc/letsencrypt/live/irc.kevin.sx/privkey.pem \
+  /etc/letsencrypt/live/irc.kevin.sx/fullchain.pem \
+  > ~/.znc/znc.pem
+
+echo "ZNC Certificate updated!"
