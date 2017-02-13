@@ -1,0 +1,56 @@
+server {
+  listen 80;
+  listen [::]:80;
+
+  server_name proxy.kevin.sx *.proxy.kevin.sx;
+  
+  include snippets/letsencrypt-acme-challenge.conf;
+  
+  location / {
+    return 301 https://$host$request_uri;
+  }
+}
+
+server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+
+  server_name proxy.kevin.sx;
+
+  ssl on;
+  ssl_certificate /etc/letsencrypt/live/proxy.kevin.sx/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/proxy.kevin.sx/privkey.pem;
+  include snippets/letsencrypt-ssl-params.conf;
+
+  root /var/www/proxy.kevin.sx;
+  index index.html;
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
+}
+
+server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+
+  server_name laracasts.proxy.kevin.sx;
+
+  ssl on;
+  ssl_certificate /etc/letsencrypt/live/laracasts.proxy.kevin.sx/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/laracasts.proxy.kevin.sx/privkey.pem;
+  include snippets/letsencrypt-ssl-params.conf;
+
+  root /var/www/proxy.kevin.sx;
+  index index.html;
+
+  location / {
+    allow 192.168.1.0/24;     # Local network
+    allow 86.85.185.164;      # Kevin van der Burgt | Bunschoten Spakenburg
+    allow 178.21.22.4;        # Reviced B.V. | Meppel
+    allow 127.0.0.1;          # Localhost | Used when VPS is enabled
+    deny all;
+    
+    proxy_pass https://laracasts.com/;
+  }
+}

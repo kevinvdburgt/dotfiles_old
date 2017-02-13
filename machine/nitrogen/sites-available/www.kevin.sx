@@ -1,0 +1,8 @@
+server {
+  listen 80;
+  listen [::]:80;
+
+  server_name www.kevin.sx kevin.sx;
+
+  return 301 https://kevinvdburgt.com/$request_uri;
+}
