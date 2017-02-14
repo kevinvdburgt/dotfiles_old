@@ -37,3 +37,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# Development aliases
+alias nr='npm run'
+alias nrs='npm run -s'
+
