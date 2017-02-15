@@ -7,4 +7,5 @@ Briefcase.link('~/.dotfiles/.vimrc', '~/.vimrc')
 Briefcase.link('~/.dotfiles/.vim/colors', '~/.vim/colors')
 Briefcase.link('~/.dotfiles/.tmux.conf', '~/.tmux.conf')
 Briefcase.link('~/.dotfiles/.atom', '~/.atom')
+Briefcase.link('~/.dotfiles/.scripts', '~/.scripts')
 
