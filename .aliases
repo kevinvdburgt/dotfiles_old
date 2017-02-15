@@ -40,4 +40,5 @@ alias egrep='egrep --color=auto'
 # Development aliases
 alias nr='npm run'
 alias nrs='npm run -s'
+alias pa='php artisan'
 
