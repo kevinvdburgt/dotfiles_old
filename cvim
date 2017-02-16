@@ -1,0 +1,9 @@
+" Settings
+set typelinkhints
+let searchlimit = 30
+let scrollstep = 70
+let barposition = "bottom"
+
+" Aliases
+command go tabnew google
+
