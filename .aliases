@@ -24,6 +24,7 @@ alias .....='cd ../../../..'
 # Shortcuts
 alias h='history'
 alias j='jobs -l'
+alias :q='exit'
 
 # Network
 alias header='curl -I'
