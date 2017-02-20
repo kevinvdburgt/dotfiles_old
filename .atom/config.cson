@@ -2,12 +2,11 @@
   core:
     disabledPackages: [
       "no-title-bar"
-      "vim-mode-plus"
     ]
     telemetryConsent: "no"
     themes: [
-      "nebula-ui"
-      "nebula-syntax"
+      "one-dark-ui"
+      "solarized-dark-syntax"
     ]
     warnOnLargeFileLimit: 2
   editor:
@@ -16,10 +15,15 @@
     userId: "0513bbc7-f3b2-f996-5d61-201444faa83c"
   "nebula-ui":
     focusMode: false
+  "one-dark-ui":
+    layoutMode: "Compact"
+    tabSizing: "Even"
+  "relative-numbers": {}
   "seti-ui":
     compactView: true
     fileIcons: false
   "tree-view":
+    alwaysOpenExisting: true
     squashDirectoryNames: true
   welcome:
     showOnStartup: false
