@@ -21,7 +21,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias mkdc='mkdir -p $1 && cd $1'
-mkdc() { mkdir -p $1 && cd $1 }
+#mkdc() { mkdir -p $1 && cd $1 }
 
 # Shortcuts
 alias h='history'
