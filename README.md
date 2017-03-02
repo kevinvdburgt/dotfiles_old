@@ -23,5 +23,4 @@ wget -qO- https://raw.githubusercontent.com/kevinvdburgt/dotfiles/master/briefca
 `briefcase/` This folder contains a dotfile sync script i've written over time for multiple platforms.
 
 ## Screenshots
-***TODO**
-
+![iTerm2 Colors](https://github.com/kevinvdburgt/dotfiles/raw/master/assets/terminal.png)

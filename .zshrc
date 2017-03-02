@@ -13,4 +13,4 @@ source $HOME/.aliases
 [ -d "$HOME/.bin" ] && export PATH=$PATH:$HOME/.bin
 [ -d "$HOME/.scripts" ] && export PATH=$PATH:$HOME/.scripts
 [ -s "$HOME/.nvm/nvm.sh" ] && \. "$HOME/.nvm/nvm.sh"
-
+[ -d "$HOME/.composer/vendor/bin" ] && export PATH=$PATH:$HOME/.composer/vendor/bin

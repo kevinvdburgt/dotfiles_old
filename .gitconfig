@@ -1,0 +1,5 @@
+[user]
+	name = Kevin van der Burgt
+	email = kevin@zdev.com
+[core]
+	excludesfiles = ~/.gitignore_global
