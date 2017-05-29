@@ -1,0 +1,75 @@
+#!/bin/bash
+
+if ls --color > /dev/null 2>&1; then
+  colorflag="--color"
+else
+  colorflag="-G"
+fi
+
+# Common commands
+alias c="clear"
+alias v="vim"
+
+# List directory contents
+alias l='ls -lF ${colorflag}'
+alias ll='ls -la ${colorflag}'
+alias ls='command ls ${colorflag}'
+alias l.='ls -d .* ${colorflag}'
+
+# Better navigation
+alias ~='cd ~'
+#alias --='cd -'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias mkdc='mkdir -p $1 && cd $1'
+#mkdc() { mkdir -p $1 && cd $1 }
+
+# tmux
+alias t="tmux"
+alias tls="tmux ls"
+alias tnew="tmux new -s"
+alias ta="tmux a"
+alias tat="tmux a -t"
+alias tkill="tmux kill-session -t"
+alias tses='tmux new -As $(basename $PWD | tr . -)'
+
+# yarn
+alias y="yarn"
+alias ya="yarn add"
+alias yad="yarn add --dev"
+alias yrem="yarn remove"
+alias ys="yarn start"
+alias yt="yarn test"
+alias yr="yarn run"
+
+# Shortcuts
+alias h='history'
+alias j='jobs -l'
+alias :q='exit'
+alias p='cd ~/Projects'
+alias d='cd ~/.dotfiles'
+
+# Network
+alias header='curl -I'
+alias headerc='curl -I --compress'
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# Always color grep output
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Serve current directory on port 4000
+alias serve="python -m SimpleHTTPServer 4000"
+
+# Development aliases
+alias nr='npm run'
+alias nrs='npm run -s'
+alias pa='php artisan'
+
+# Use the correct term for ssh
+alias ssh="TERM=xterm-256color ssh"

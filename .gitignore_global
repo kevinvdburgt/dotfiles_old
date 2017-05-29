@@ -1,0 +1,13 @@
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Development
+.vagrant/
+vendor/
+node_modules/
+__pycache__

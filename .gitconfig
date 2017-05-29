@@ -1,0 +1,20 @@
+[user]
+    name = Kevin van der Burgt
+    email = kevin@zdev.com
+
+[push]
+    default = current
+
+[core]
+    editor = vim
+    excludesfiles = ~/.gitignore_global
+    attributesfile = ~/.gitattributes
+
+[diff]
+    tool = vimdiff
+
+[mergetool]
+    path = vim
+
+[merge]
+    tool = vimdiff
