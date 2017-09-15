@@ -1,5 +1,7 @@
 #/!bin/bash
 
+SCRIPT=${1:-$(hostname)}
+
 # Validate if the required dependencies exists on the machine, in case those
 # required dependencies doesnt exists on the machine, abort the script and tell
 # the user to install those required dependencies.
@@ -31,10 +33,10 @@ else
 fi
 
 # Check if there is a matching python script according to our hostname.
-if [ -f "$HOME/.dotfiles/briefcase/scripts/$(hostname).py" ]; then
-  echo "Executing $HOME/.dotfiles/briefcase/scripts/$(hostname).py..."
-  python3 $HOME/.dotfiles/briefcase/scripts/$(hostname).py
+if [ -f "$HOME/.dotfiles/briefcase/scripts/$SCRIPT.py" ]; then
+  echo "Executing $HOME/.dotfiles/briefcase/scripts/$SCRIPT.py..."
+  python3 "$HOME/.dotfiles/briefcase/scripts/$SCRIPT.py"
 else
-  echo "Script not found for $(hostname)"
+  echo "Script not found for $SCRIPT"
   exit 1
 fi

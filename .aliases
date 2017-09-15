@@ -73,3 +73,8 @@ alias pa='php artisan'
 
 # Use the correct term for ssh
 alias ssh="TERM=xterm-256color ssh"
+
+# Services
+alias kwm-start='brew services start kwm'
+alias kwm-stop='brew services stop kwm'
+alias kwm-restart='brew services restart kwm'

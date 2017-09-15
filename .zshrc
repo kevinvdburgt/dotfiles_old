@@ -86,3 +86,9 @@ export LC_ALL=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source $HOME/.aliases
+
+[ -d "$HOME/.bin" ] && export PATH=$PATH:$HOME/.bin
+[ -d "$HOME/.scripts" ] && export PATH=$PATH:$HOME/.scripts
+[ -s "$HOME/.nvm/nvm.sh" ] && \. "$HOME/.nvm/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -d "$HOME/.composer/vendor/bin" ] && export PATH=$PATH:$HOME/.composer/vendor/bin
